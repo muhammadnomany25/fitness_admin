@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'item_name' => 'Fix Item Name',
     'item_name_en' => 'Fix Item Name (English)',
     'item_name_ar' => 'Fix Item (Arabic)',
     'quantity' => 'Quantity',

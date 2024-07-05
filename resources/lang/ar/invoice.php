@@ -2,6 +2,7 @@
 
 
 return [
+    'item_name' => 'اسم العطل',
     'item_name_en' => 'اسم العطل (انجليزي)',
     'item_name_ar' => 'اسم العطل (عربي)',
     'quantity' => 'الكمية',

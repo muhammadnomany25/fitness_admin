@@ -41,13 +41,8 @@ class OrderInvoicePage extends ManageRelatedRecords
         return $table
             ->recordTitleAttribute('item_name_en')
             ->columns([
-                Tables\Columns\TextColumn::make('item_name_en')
-                    ->label(trans('invoice.item_name_en'))
-                    ->searchable()
-                    ->sortable(),
-
-                Tables\Columns\TextColumn::make('item_name_ar')
-                    ->label(trans('invoice.item_name_ar'))
+                Tables\Columns\TextColumn::make('item_name')
+                    ->label(trans('invoice.item_name'))
                     ->searchable()
                     ->sortable(),
 
@@ -72,8 +67,9 @@ class OrderInvoicePage extends ManageRelatedRecords
                     ->label(trans('invoice.total_cost'))
                     ->summarize(Summarizer::make()
                         ->money('kwd')
-                        ->using(fn(Builder $query): int => $query->sum('quantity') * $query->sum('item_cost')))
-
+                        ->using(function (Builder $query): int {
+                            return $query->selectRaw('SUM(quantity * item_cost) as total')->pluck('total')->first();
+                        }))
             ])
             ->filters([
                 //
