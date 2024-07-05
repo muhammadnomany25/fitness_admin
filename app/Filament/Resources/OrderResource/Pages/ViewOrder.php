@@ -5,6 +5,7 @@ namespace App\Filament\Resources\OrderResource\Pages;
 use App\Enums\OrderStatus;
 use App\Filament\Resources\OrderResource;
 use App\Models\Order;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -90,16 +91,13 @@ class ViewOrder extends ViewRecord
                             ->label(trans('orders.client_address'))
                             ->maxLength(255),
 
-                        TextInput::make('client_flat_number')
-                            ->required()
-                            ->label(trans('orders.client_flat_number'))
-                            ->maxLength(255),
-
                         Select::make('technician_id')
                             ->relationship(name: 'technician', titleAttribute: 'name')
                             ->searchable()
                             ->label(trans('orders.technician'))
                             ->preload(),
+
+                        Datepicker::make('visit_date')->label('Visit Date')->nullable(),
 
                         TextInput::make('notes')
                             ->required()

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Constants\AppConstants;
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
@@ -15,12 +16,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class UserResource extends Resource
 {
+    protected static ?int $navigationSort = AppConstants::UsersSideMenuOrder;
+
     protected static ?string $model = User::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
-    protected static ?int $navigationSort = 0;
-
     protected static ?string $modelLabel = null;
     protected static ?string $pluralModelLabel = null;
 

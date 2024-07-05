@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources;
 
+use App\Constants\AppConstants;
 use App\Enums\OrderStatus;
 use App\Filament\Resources\OrderResource\Pages;
 use App\Models\Order;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
@@ -20,6 +22,9 @@ use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 
 class OrderResource extends Resource
 {
+
+    protected static ?int $navigationSort = AppConstants::OrdersSideMenuOrder;
+
     protected static ?string $model = Order::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -74,18 +79,14 @@ class OrderResource extends Resource
                             ->label(trans('orders.client_address'))
                             ->maxLength(255),
 
-                        Forms\Components\TextInput::make('client_flat_number')
-                            ->required()
-                            ->label(trans('orders.client_flat_number'))
-                            ->maxLength(255)
-                            ->hidden(),
-
                         Select::make('technician_id')
                             ->relationship(name: 'technician', titleAttribute: 'name')
                             ->searchable()
                             ->label(trans('orders.technician'))
                             ->preload()
                             ->columnSpan(2),
+
+                        Datepicker::make('visit_date')->label('Visit Date')->nullable(),
 
                         Select::make('user_id')
                             ->label(trans('orders.order_creator'))
@@ -143,11 +144,6 @@ class OrderResource extends Resource
                     ->label(trans('orders.client_address'))
                 ,
 
-                Tables\Columns\TextColumn::make('client_flat_number')
-                    ->label(trans('orders.client_flat_number'))
-                    ->hidden()
-                ,
-
                 Tables\Columns\TextColumn::make('status')
                     ->label(trans('orders.status_'))
                     ->badge(),
@@ -158,9 +154,8 @@ class OrderResource extends Resource
                         'style' => 'max-width: 300px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: normal;',
                     ]),
 
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label(trans('orders.created_at'))
-                    ->dateTime()
+                Tables\Columns\TextColumn::make('visit_date')
+                    ->label(trans('orders.visit_date'))
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('technician.name')
@@ -169,6 +164,20 @@ class OrderResource extends Resource
                     ->sortable(),
             ])
             ->filters([
+                Filter::make('visit_date')
+                    ->form([
+                        Forms\Components\Section::make(trans('orders.visit_date'))
+                            ->schema([
+                                Forms\Components\DatePicker::make('created_from')
+                                    ->label(trans('general.day')),
+                            ])
+
+                    ])
+                    ->query(function ($query, array $data) {
+                        return $query
+                            ->when($data['created_from'], fn($query, $date) => $query->whereDate('visit_date', '=', $date));
+                    }),
+
                 Filter::make('created_at')
                     ->form([
                         Forms\Components\Section::make(trans('general.createdAt'))

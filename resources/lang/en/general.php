@@ -6,4 +6,5 @@ return [
     'from' => 'From',
     'to' => 'To',
     'export' => 'Export to Excel',
+    'day' => 'Day',
 ];

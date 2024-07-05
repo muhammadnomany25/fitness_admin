@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Constants\AppConstants;
 use App\Filament\Resources\TechnicianResource\Pages;
 use App\Filament\Resources\TechnicianResource\RelationManagers;
 use App\Models\Technician;
@@ -15,12 +16,11 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TechnicianResource extends Resource
 {
+
+    protected static ?int $navigationSort = AppConstants::TechsSideMenuOrder;
+
     protected static ?string $model = Technician::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
-    protected static ?int $navigationSort = 1;
-
     protected static ?string $modelLabel = null;
     protected static ?string $pluralModelLabel = null;
 

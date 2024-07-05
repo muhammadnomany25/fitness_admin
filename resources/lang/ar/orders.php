@@ -22,4 +22,7 @@ return [
     'invoiceAction' => 'الفاتورة',
     'order_creator' => 'تم الإنشاء بواسطة',
 
+    'daily_reports' => 'التقارير اليومية',
+    'visit_date' => 'تاريخ الزيارة',
+
 ];

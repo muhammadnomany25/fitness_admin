@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Constants\AppConstants;
 use App\Filament\Resources\InvoiceItemResource\Pages;
 use App\Filament\Resources\InvoiceItemResource\RelationManagers;
 use App\Models\InvoiceItem;
@@ -19,7 +20,7 @@ class InvoiceItemResource extends Resource
     protected static ?string $model = InvoiceItem::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = AppConstants::FixItemsSideMenuOrder;
 
     protected static ?string $modelLabel = null;
     protected static ?string $pluralModelLabel = null;
@@ -66,7 +67,6 @@ class InvoiceItemResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('cost')
                     ->label(trans('invoice.item_cost'))
-                    ->money('kwd')
                     ->sortable(),
 
             ])

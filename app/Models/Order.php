@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\OrderStatus;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Order extends Model
 {
@@ -17,12 +18,13 @@ class Order extends Model
         'technician_id',
         'user_id',
         'notes',
+        'visit_date',
     ];
 
     protected $casts = [
         'status' => OrderStatus::class,
     ];
-    public function invoiceItems()
+    public function orderInvoices()
     {
         return $this->hasMany(OrderInvoice::class);
     }
@@ -40,6 +42,14 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    protected $dates = ['visit_date']; // Ensure visit_date is treated as a date
+
+    // Accessor for formatted visit date
+    public function getVisitDateAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
     }
 
 }

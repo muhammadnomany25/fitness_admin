@@ -20,4 +20,7 @@ return [
     'notesAction' => 'Notes',
     'invoiceAction' => 'Invoice',
     'order_creator' => 'Order Created By',
+
+    'daily_reports' => 'Daily Reports',
+    'visit_date' => 'Visit Date',
 ];

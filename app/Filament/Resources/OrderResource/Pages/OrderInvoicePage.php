@@ -17,7 +17,7 @@ class OrderInvoicePage extends ManageRelatedRecords
 
     protected static string $resource = OrderResource::class;
 
-    protected static string $relationship = 'invoiceItems';
+    protected static string $relationship = 'orderInvoices';
 
     protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
 
@@ -58,7 +58,6 @@ class OrderInvoicePage extends ManageRelatedRecords
 
                 Tables\Columns\TextColumn::make('total')
                     ->label(trans('invoice.total'))
-                    ->money('kwd')
                     ->getStateUsing(function (OrderInvoice $record) {
                         return $record->quantity * $record->item_cost;
                     }),
@@ -66,7 +65,6 @@ class OrderInvoicePage extends ManageRelatedRecords
                 Tables\Columns\TextColumn::make('total_cost')
                     ->label(trans('invoice.total_cost'))
                     ->summarize(Summarizer::make()
-                        ->money('kwd')
                         ->using(function (Builder $query): int {
                             return $query->selectRaw('SUM(quantity * item_cost) as total')->pluck('total')->first();
                         }))
