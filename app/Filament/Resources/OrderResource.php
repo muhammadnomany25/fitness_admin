@@ -86,7 +86,7 @@ class OrderResource extends Resource
                             ->preload()
                             ->columnSpan(2),
 
-                        Datepicker::make('visit_date')->label('Visit Date')->nullable(),
+//                        Datepicker::make('visit_date')->label('Visit Date')->nullable(),
 
                         Select::make('user_id')
                             ->label(trans('orders.order_creator'))
@@ -169,6 +169,7 @@ class OrderResource extends Resource
                         Forms\Components\Section::make(trans('orders.visit_date'))
                             ->schema([
                                 Forms\Components\DatePicker::make('created_from')
+                                    ->native(false)
                                     ->label(trans('general.day')),
                             ])
 
@@ -183,9 +184,11 @@ class OrderResource extends Resource
                         Forms\Components\Section::make(trans('general.createdAt'))
                             ->schema([
                                 Forms\Components\DatePicker::make('created_from')
-                                    ->label(trans('general.from')),
+                                    ->label(trans('general.from'))
+                                    ->native(false),
                                 Forms\Components\DatePicker::make('created_until')
-                                    ->label(trans('general.to')),
+                                    ->label(trans('general.to'))
+                                    ->native(false),
                             ])
 
                     ])
@@ -198,8 +201,6 @@ class OrderResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-//                Tables\Actions\Action::make('activities')
-//                    ->url(fn($record) => Activities::getSubjectUrl($record))
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

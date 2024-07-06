@@ -8,7 +8,6 @@ use Illuminate\Support\Carbon;
 
 class Order extends Model
 {
-
     protected $fillable = [
         'client_name',
         'client_phone',
@@ -45,11 +44,5 @@ class Order extends Model
     }
 
     protected $dates = ['visit_date']; // Ensure visit_date is treated as a date
-
-    // Accessor for formatted visit date
-    public function getVisitDateAttribute($value)
-    {
-        return Carbon::parse($value)->format('Y-m-d');
-    }
 
 }
