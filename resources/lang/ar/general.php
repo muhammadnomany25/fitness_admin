@@ -9,4 +9,8 @@ return [
     'export' => 'تنزيل ملف إكسل',
     'day' => 'اليوم',
 
+    'orders_group' => 'الطلبات',
+    'reports_group' => 'التقارير المالية',
+    'users_group' => 'الموظفين',
+
 ];

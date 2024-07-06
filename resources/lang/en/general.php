@@ -7,4 +7,9 @@ return [
     'to' => 'To',
     'export' => 'Export to Excel',
     'day' => 'Day',
+
+    'orders_group' => 'Orders',
+    'reports_group' => 'Financial Reports',
+    'users_group' => 'Employees',
+
 ];

@@ -6,6 +6,7 @@ use App\Constants\AppConstants;
 use App\Enums\OrderStatus;
 use App\Filament\Resources\OrderResource\Pages;
 use App\Models\Order;
+use Carbon\Carbon;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\MarkdownEditor;
@@ -30,6 +31,11 @@ class OrderResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Top;
+
+    public static function getNavigationGroup(): ?string
+    {
+        return trans('general.orders_group');
+    }
 
     protected static ?string $modelLabel = null;
     protected static ?string $pluralModelLabel = null;
@@ -162,6 +168,13 @@ class OrderResource extends Resource
                     ->label(trans('orders.technician'))
                     ->searchable()
                     ->sortable(),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label(trans('orders.created_at'))
+                    ->formatStateUsing(function ($state) {
+                        return Carbon::parse($state)->format('Y-m-d');
+                    })
+                    ->sortable(),
             ])
             ->filters([
                 Filter::make('visit_date')
@@ -210,7 +223,7 @@ class OrderResource extends Resource
                     ->label(trans('general.export'))
             ])
             ->defaultSort('created_at', 'desc')
-            ->persistSortInSession(true);
+            ->persistSortInSession();
     }
 
     public static function getRelations(): array

@@ -23,4 +23,6 @@ return [
 
     'daily_reports' => 'Daily Reports',
     'visit_date' => 'Visit Date',
+
+    'completed_orders' => 'Completed Orders',
 ];

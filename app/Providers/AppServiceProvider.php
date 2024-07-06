@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Filament\Facades\Filament;
+use Filament\Navigation\NavigationGroup;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
@@ -33,6 +35,21 @@ class AppServiceProvider extends ServiceProvider
         if (class_exists(ExcelServiceProvider::class)) {
             $this->app->register(ExcelServiceProvider::class);
         }
+
+        Filament::serving(function () {
+            Filament::registerNavigationGroups([
+                NavigationGroup::make()
+                    ->label(trans('general.orders_group'))
+                    ->icon('heroicon-s-shopping-cart'),
+                NavigationGroup::make()
+                    ->label(trans('general.reports_group'))
+                    ->icon('heroicon-o-currency-dollar'),
+                NavigationGroup::make()
+                    ->label(trans('general.users_group'))
+                    ->icon('heroicon-o-user')
+                    ->collapsed(),
+            ]);
+        });
 
     }
 }

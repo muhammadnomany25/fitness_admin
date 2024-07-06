@@ -25,6 +25,10 @@ class InvoiceItemResource extends Resource
     protected static ?string $modelLabel = null;
     protected static ?string $pluralModelLabel = null;
 
+    public static function getNavigationGroup(): ?string
+    {
+        return trans('general.orders_group');
+    }
     public static function getPluralModelLabel(): string
     {
         return trans('invoice.fix_items');
@@ -39,12 +43,8 @@ class InvoiceItemResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title_ar')
-                    ->label(trans('invoice.item_name_ar'))
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('title_en')
-                    ->label(trans('invoice.item_name_en'))
+                Forms\Components\TextInput::make('title')
+                    ->label(trans('invoice.item_name'))
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('cost')
@@ -59,11 +59,8 @@ class InvoiceItemResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title_ar')
-                    ->label(trans('invoice.item_name_ar'))
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('title_en')
-                    ->label(trans('invoice.item_name_en'))
+                Tables\Columns\TextColumn::make('title')
+                    ->label(trans('invoice.item_name'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('cost')
                     ->label(trans('invoice.item_cost'))

@@ -7,4 +7,5 @@ return [
     'Duplicated' => 'Duplicated',
     'Reassigned' => 'Reassigned',
     'all' => 'All',
+    'cancelled' => 'Cancelled',
 ];

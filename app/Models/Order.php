@@ -43,6 +43,11 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected $dates = ['visit_date']; // Ensure visit_date is treated as a date
+    protected $dates = ['visit_date', 'created_at']; // Ensure visit_date is treated as a date
+
+    public function getCreatedAtFormattedAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+    }
 
 }

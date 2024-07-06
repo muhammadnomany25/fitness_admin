@@ -4,10 +4,20 @@ namespace App\Constants;
 
 class AppConstants
 {
+
+    //Users Group
+    const TechsSideMenuOrder = 0;
+    const UsersSideMenuOrder = 1;
+
+    //Orders Group
     const OrdersSideMenuOrder = 0;
-    const DailyReportsSideMenuOrder = 1;
+    const CompletedOrdersSideMenuOrder = 1;
     const FixItemsSideMenuOrder = 2;
-    const TechsSideMenuOrder = 3;
-    const UsersSideMenuOrder = 4;
+
+    //Financial reports Group
+    const DailyReportsSideMenuOrder = 0;
+    const DuePaymentsSideMenuOrder = 1;
+
+
 
 }

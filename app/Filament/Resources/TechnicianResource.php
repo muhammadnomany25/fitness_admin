@@ -24,6 +24,11 @@ class TechnicianResource extends Resource
     protected static ?string $modelLabel = null;
     protected static ?string $pluralModelLabel = null;
 
+    public static function getNavigationGroup(): ?string
+    {
+        return trans('general.users_group');
+    }
+
     public static function getPluralModelLabel(): string
     {
         return trans('technicians.technicians');

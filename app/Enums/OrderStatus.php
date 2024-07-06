@@ -18,6 +18,7 @@ enum OrderStatus: string implements HasColor, HasIcon, HasLabel
     case Duplicated = 'Duplicated';
 
     case Reassigned = 'Reassigned';
+    case Cancelled = 'Cancelled';
 
     public function getLabel(): string
     {
@@ -26,7 +27,8 @@ enum OrderStatus: string implements HasColor, HasIcon, HasLabel
             self::InProgress => trans('status.' .'inProgress'),
             self::Duplicated => trans('status.' .'Duplicated'),
             self::Reassigned => trans('status.' .'Reassigned'),
-            self::Completed => trans('status.' .'Completed')
+            self::Completed => trans('status.' .'Completed'),
+            self::Cancelled => trans('status.' .'cancelled')
         };
     }
 
@@ -37,6 +39,7 @@ enum OrderStatus: string implements HasColor, HasIcon, HasLabel
             self::InProgress => 'warning',
             self::Duplicated => 'danger',
             self::Completed => 'success',
+            self::Cancelled => 'danger',
         };
     }
 
@@ -53,7 +56,8 @@ enum OrderStatus: string implements HasColor, HasIcon, HasLabel
             self::Duplicated => 'heroicon-m-arrow-path',
             self::InProgress => 'heroicon-m-truck',
             self::Reassigned => 'heroicon-m-check-badge',
-            self::Completed => 'heroicon-m-check-badge'
+            self::Completed => 'heroicon-m-check-badge',
+            self::Cancelled => 'heroicon-m-x-circle'
         };
     }
 }

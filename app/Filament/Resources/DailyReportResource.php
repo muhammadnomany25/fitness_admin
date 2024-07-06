@@ -29,6 +29,11 @@ class DailyReportResource extends Resource
     protected static ?string $pluralModelLabel = null;
     protected static ?string $filterDate = null;
 
+    public static function getNavigationGroup(): ?string
+    {
+        return trans('general.reports_group');
+    }
+
     public static function getNavigationLabel(): string
     {
         return trans('orders.daily_reports');
@@ -76,6 +81,13 @@ class DailyReportResource extends Resource
                 Tables\Columns\TextColumn::make('technician.name')
                     ->label(trans('orders.technician'))
                     ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label(trans('orders.created_at'))
+                    ->formatStateUsing(function ($state) {
+                        return \Carbon\Carbon::parse($state)->format('Y-m-d');
+                    })
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('invoices')
@@ -146,13 +158,13 @@ class DailyReportResource extends Resource
 
                     ])
                     ->query(function ($query, array $data) {
-                        if ($data['created_from']) {
+                        if (isset($data['created_from']) && $data['created_from']) {
                             return $query->whereHas('orderInvoices', function (Builder $query) use ($data) {
                                 $query->whereDate('created_at', $data['created_from']);
                             });
                         } else {
-                            return $query->with('orderInvoices', function (Builder $query) use ($data) {
-                                $currentDate = Carbon::now()->format('Y-m-d');
+                            $currentDate = Carbon::now()->format('Y-m-d');
+                            return $query->whereHas('orderInvoices', function (Builder $query) use ($currentDate) {
                                 $query->whereDate('created_at', $currentDate);
                             });
                         }

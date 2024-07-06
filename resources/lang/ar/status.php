@@ -8,4 +8,5 @@ return [
     'Duplicated' => 'مكرر',
     'Reassigned' => 'محول لفني',
     'all' => 'الكل',
+    'cancelled' => 'ملغاة',
 ];

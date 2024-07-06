@@ -12,4 +12,6 @@ return [
     'fix_item' => 'العطل',
     'fix_items' => 'قائمة الأعطال',
 
+    'due_payments' => 'المطالبات',
+
 ];

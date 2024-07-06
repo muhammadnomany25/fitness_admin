@@ -21,10 +21,12 @@ class ListOrders extends ListRecords
     public function getTabs(): array
     {
         return [
+            trans('status.all') => Tab::make()->query(fn($query) => $query->whereNotIn('status', ['Completed', 'Cancelled'])),
             trans('status.new') => Tab::make()->query(fn($query) => $query->where('status', 'new')),
             trans('status.inProgress') => Tab::make()->query(fn($query) => $query->where('status', 'inProgress')),
             trans('status.Duplicated') => Tab::make()->query(fn($query) => $query->where('status', 'Duplicated')),
             trans('status.Reassigned') => Tab::make()->query(fn($query) => $query->where('status', 'Reassigned')),
+            trans('status.cancelled') => Tab::make()->query(fn($query) => $query->where('status', 'Cancelled')),
         ];
     }
 }

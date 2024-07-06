@@ -10,4 +10,6 @@ return [
     'total_cost' => 'Invoice Total',
     'fix_item' => 'Fix Item',
     'fix_items' => 'Fix Items',
+
+    'due_payments' => 'Due Payments',
 ];

@@ -25,4 +25,6 @@ return [
     'daily_reports' => 'التقارير اليومية',
     'visit_date' => 'تاريخ الزيارة',
 
+    'completed_orders' => 'الطلبات المكتملة',
+
 ];
