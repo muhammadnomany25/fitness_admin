@@ -23,7 +23,7 @@ class OrderController extends Controller
             ->with('orderInvoices')
             ->get();
 
-        return response()->json(['orders' => $orders], 200);
+        return response()->json(['data' => $orders], 200);
     }
 
 //    public function techOrders(Request $request)

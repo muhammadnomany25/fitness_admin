@@ -16,8 +16,8 @@ class FixItemsController extends Controller
             return response()->json(['error' => 'Technician Not exist'], 404);
         }
 
-        $orders = InvoiceItem::get();
+        $fixItems = InvoiceItem::get();
 
-        return response()->json(['fixItems' => $orders], 200);
+        return response()->json(['data' => $fixItems], 200);
     }
 }
