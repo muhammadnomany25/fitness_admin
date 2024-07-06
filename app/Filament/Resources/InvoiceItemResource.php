@@ -47,11 +47,6 @@ class InvoiceItemResource extends Resource
                     ->label(trans('invoice.item_name'))
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('cost')
-                    ->label(trans('invoice.item_cost'))
-                    ->required()
-                    ->numeric()
-                    ->prefix('KWD'),
             ]);
     }
 
@@ -62,9 +57,6 @@ class InvoiceItemResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->label(trans('invoice.item_name'))
                     ->searchable(),
-                Tables\Columns\TextColumn::make('cost')
-                    ->label(trans('invoice.item_cost'))
-                    ->sortable(),
 
             ])
             ->filters([

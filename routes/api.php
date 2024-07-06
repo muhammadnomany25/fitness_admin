@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/technician/login', [\App\Http\Controllers\TechnicianController::class, 'login']);
+
+Route::middleware('auth:sanctum')->get('/orders/techOrders', [\App\Http\Controllers\OrderController::class, 'techOrders']);
+Route::middleware('auth:sanctum')->get('/fixItems/all', [\App\Http\Controllers\FixItemsController::class, 'fixItems']);
+

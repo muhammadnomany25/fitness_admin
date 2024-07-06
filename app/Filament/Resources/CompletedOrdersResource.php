@@ -123,8 +123,6 @@ class CompletedOrdersResource extends Resource
     {
         return [
             'index' => Pages\ListCompletedOrders::route('/'),
-            'create' => Pages\CreateCompletedOrders::route('/create'),
-            'edit' => Pages\EditCompletedOrders::route('/{record}/edit'),
         ];
     }
 

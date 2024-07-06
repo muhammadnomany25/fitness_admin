@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Sanctum\HasApiTokens;
 
 class Technician extends Model
 {
-    use HasFactory;
+    use HasFactory, HasApiTokens;
 
     protected $fillable = [
         'name',
@@ -21,4 +22,8 @@ class Technician extends Model
             'password' => 'hashed',
         ];
     }
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 }
