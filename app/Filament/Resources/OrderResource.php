@@ -6,12 +6,15 @@ use App\Constants\AppConstants;
 use App\Enums\OrderStatus;
 use App\Filament\Resources\OrderResource\Pages;
 use App\Models\Order;
+use App\Services\FCMService;
 use Carbon\Carbon;
+use Filament\Actions\Action;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Pages\SubNavigationPosition;
 use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
@@ -211,6 +214,22 @@ class OrderResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('sendNotification')
+                    ->label('Send Notification')
+                    ->action(function ($record) {
+                        $fcmService = app(FCMService::class);
+                        $deviceToken = "";
+                        $title = 'Test Notification';
+                        $body = 'This is a test notification.';
+
+                        $fcmService->sendNotification($deviceToken, $title, $body);
+
+                            Notification::make()
+                                ->title('Notification Sent')
+                                ->success()
+                                ->send();
+
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
