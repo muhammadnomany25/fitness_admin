@@ -22,4 +22,5 @@ Route::post('/technician/login', [\App\Http\Controllers\TechnicianController::cl
 
 Route::middleware('auth:sanctum')->get('/orders/techOrders', [\App\Http\Controllers\OrderController::class, 'techOrders']);
 Route::middleware('auth:sanctum')->get('/fixItems/all', [\App\Http\Controllers\FixItemsController::class, 'fixItems']);
+Route::middleware('auth:sanctum')->post('/technician/completeOrder', [\App\Http\Controllers\TechnicianController::class, 'completeOrder']);
 

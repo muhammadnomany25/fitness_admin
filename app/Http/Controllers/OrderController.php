@@ -25,17 +25,4 @@ class OrderController extends Controller
 
         return response()->json(['data' => $orders], 200);
     }
-
-//    public function techOrders(Request $request)
-//    {
-//        $technician = $request->user();
-//
-//        if (!$technician) {
-//            return response()->json(['error' => 'Technician Not exist'], 404);
-//        }
-//
-//        $orders = Order::where('technician_id', $technician->id)->get();
-//
-//        return response()->json(['orders' => $orders], 200);
-//    }
 }
