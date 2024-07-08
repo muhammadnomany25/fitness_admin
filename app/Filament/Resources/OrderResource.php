@@ -214,22 +214,6 @@ class OrderResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\Action::make('sendNotification')
-                    ->label('Send Notification')
-                    ->action(function ($record) {
-                        $fcmService = app(FCMService::class);
-                        $deviceToken = "";
-                        $title = 'Test Notification';
-                        $body = 'This is a test notification.';
-
-                        $fcmService->sendNotification($deviceToken, $title, $body);
-
-                            Notification::make()
-                                ->title('Notification Sent')
-                                ->success()
-                                ->send();
-
-                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
