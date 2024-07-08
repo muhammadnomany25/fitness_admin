@@ -81,7 +81,7 @@ class OrderInvoicePage extends ManageRelatedRecords
 //                Tables\Actions\DeleteAction::make(),
             ])
             ->groupedBulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+//                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 }
