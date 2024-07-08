@@ -70,10 +70,10 @@ class TechnicianController extends Controller
             foreach ($items as $itemData) {
                 // Save each item to the database
                 OrderInvoice::create([
-                    'item_name' => $itemData['name'],
+                    'item_name' => $itemData['title'],
                     'order_id' => $orderId,
                     'quantity' => $itemData['quantity'],
-                    'item_cost' => $itemData['item_cost'],
+                    'item_cost' => $itemData['cost'],
                 ]);
             }
 
