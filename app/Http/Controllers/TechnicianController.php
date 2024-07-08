@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\InvoiceItem;
 use App\Models\Order;
 use App\Models\OrderInvoice;
 use App\Models\Technician;
@@ -81,5 +80,26 @@ class TechnicianController extends Controller
         } else {
             return response()->json(['error' => 'Order ID ' . $orderId . ' not found'], 404);
         }
+    }
+
+    public function updateFcmToken(Request $request)
+    {
+        $validatedData = $request->validate([
+            'fcm_token' => 'required|string',
+        ]);
+
+        $fcm_token = $validatedData['fcm_token'];
+
+        $technician = $request->user();
+
+        if (!$technician) {
+            return response()->json(['error' => 'Technician Not exist'], 404);
+        }
+
+        $technician->fcm_token = $fcm_token;
+        $technician->save();
+
+        return response()->json(['message' => 'saved successfully']);
+
     }
 }
