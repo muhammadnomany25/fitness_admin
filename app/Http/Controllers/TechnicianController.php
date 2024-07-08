@@ -63,9 +63,9 @@ class TechnicianController extends Controller
             // Update notes if provided
             if (!empty($notes)) {
                 $order->notes = $notes;
-                $order->technician_id = null;
-                $order->save();
             }
+            $order->technician_id = null;
+            $order->save();
 
             foreach ($items as $itemData) {
                 // Save each item to the database
