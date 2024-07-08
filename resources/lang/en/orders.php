@@ -2,7 +2,7 @@
 
 return [
     'orders_' => 'Orders',
-    'id' => 'Order Number',
+    'id' => '#',
     'client_name' => 'Client Name',
     'client_phone' => 'Phone Number',
     'client_address' => 'Address',

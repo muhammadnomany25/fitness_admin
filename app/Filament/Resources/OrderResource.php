@@ -155,10 +155,7 @@ class OrderResource extends Resource
                     ->badge(),
 
                 Tables\Columns\TextColumn::make('notes')
-                    ->label(trans('orders.notes_'))
-                    ->extraAttributes([
-                        'style' => 'max-width: 300px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: normal;',
-                    ]),
+                    ->label(trans('orders.notes_')),
 
                 Tables\Columns\TextColumn::make('visit_date')
                     ->label(trans('orders.visit_date'))

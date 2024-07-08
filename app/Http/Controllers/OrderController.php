@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Models\Technician;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
 {
@@ -19,7 +15,10 @@ class OrderController extends Controller
             return response()->json(['error' => 'Technician Not exist'], 404);
         }
 
+        $validStatuses = ['new', 'inProgress', 'Duplicated', 'Reassigned'];
+
         $orders = Order::where('technician_id', $technician->id)
+            ->whereIn('status', $validStatuses)
             ->with('orderInvoices')
             ->get();
 

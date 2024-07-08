@@ -102,7 +102,6 @@ class ViewOrder extends ViewRecord
                         TextInput::make('notes')
                             ->required()
                             ->label(trans('orders.notes_'))
-                            ->maxLength(255)
                             ->columnSpan(2),
 
                     ])

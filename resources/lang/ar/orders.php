@@ -3,7 +3,7 @@
 
 return [
     'orders_' => 'الطلبات',
-    'id' => 'رقم الطلب',
+    'id' => '#',
     'client_name' => 'اسم العميل',
     'client_phone' => 'رقم الهاتف',
     'client_address' => 'العنوان',
