@@ -21,7 +21,7 @@ class FCMService
     {
 
         $firebase = (new Factory())
-            ->withServiceAccount(__DIR__ . '/akc-technician-firebase-adminsdk-ojsd9-4fa18e7bd3.json')
+            ->withServiceAccount(env('GOOGLE_APPLICATION_CREDENTIALS'))
             ->withDatabaseUri('https://fast-tec-app-default-rtdb.firebaseio.com');
 
         $cloudMessaging = $firebase->createMessaging();
