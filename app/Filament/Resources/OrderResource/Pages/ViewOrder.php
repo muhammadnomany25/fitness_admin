@@ -97,7 +97,10 @@ class ViewOrder extends ViewRecord
                             ->label(trans('orders.technician'))
                             ->preload(),
 
-                        Datepicker::make('visit_date')->label('Visit Date')->nullable(),
+                        Datepicker::make('visit_date')
+                            ->label('Visit Date')
+                            ->nullable()
+                            ->native(false),
 
                         TextInput::make('notes')
                             ->required()

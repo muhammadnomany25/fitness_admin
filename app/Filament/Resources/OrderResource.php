@@ -95,6 +95,11 @@ class OrderResource extends Resource
                             ->preload()
                             ->columnSpan(2),
 
+                        Datepicker::make('visit_date')
+                            ->label('Visit Date')
+                            ->nullable()
+                            ->native(false),
+
 //                        Datepicker::make('visit_date')->label('Visit Date')->nullable(),
 
                         Select::make('user_id')

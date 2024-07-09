@@ -70,7 +70,10 @@ class EditOrder extends EditRecord
                             ->label(trans('orders.technician'))
                             ->preload(),
 
-                        Datepicker::make('visit_date')->label('Visit Date')->nullable(),
+                        Datepicker::make('visit_date')
+                            ->label('Visit Date')
+                            ->nullable()
+                            ->native(false),
 
                         MarkdownEditor::make('notes')
                             ->label(trans('orders.notes_'))
