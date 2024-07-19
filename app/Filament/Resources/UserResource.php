@@ -47,6 +47,7 @@ class UserResource extends Resource
                     ->unique()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
+                    ->unique()
                     ->label(trans('users.email'))
                     ->email()
                     ->required()
@@ -56,10 +57,10 @@ class UserResource extends Resource
                     ->password()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\CheckboxList::make('roles')
-                    ->label(trans('users.roles'))
-                    ->relationship('roles', 'name')
-                    ->required()
+//                Forms\Components\CheckboxList::make('roles')
+//                    ->label(trans('users.roles'))
+//                    ->relationship('roles', 'name')
+//                    ->required()
             ]);
     }
 
@@ -81,7 +82,7 @@ class UserResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                    ->visible(fn(User $record) => $record->email != 'admin@akc.com'),
+                    ->visible(fn(User $record) => $record->email != 'super@akc.com'),
                 Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([

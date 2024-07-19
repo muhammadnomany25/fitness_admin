@@ -103,8 +103,10 @@ class DailyReportResource extends Resource
                         if ($filterDate) {
                             $invoices->whereDate('created_at', $filterDate);
                         } else if ($input && json_last_error() === JSON_ERROR_NONE) {
-                            $inPageFilterDate = $input['components'][0]['updates']['tableFilters.visit_date.created_from'];
-                            $invoices->whereDate('created_at', $inPageFilterDate);
+                            if(isset($input['components'][0]['updates']['tableFilters.visit_date.created_from'])){
+                                $inPageFilterDate = $input['components'][0]['updates']['tableFilters.visit_date.created_from'];
+                                $invoices->whereDate('created_at', $inPageFilterDate);
+                            }
                         } else {
                             $currentDate = Carbon::now()->format('Y-m-d');
                             $invoices->whereDate('created_at', $currentDate);
@@ -126,8 +128,10 @@ class DailyReportResource extends Resource
                         if ($filterDate) {
                             $invoices->whereDate('created_at', $filterDate);
                         } else if ($input && json_last_error() === JSON_ERROR_NONE) {
-                            $inPageFilterDate = $input['components'][0]['updates']['tableFilters.visit_date.created_from'];
-                            $invoices->whereDate('created_at', $inPageFilterDate);
+                            if (isset($input['components'][0]['updates']['tableFilters.visit_date.created_from'])) {
+                                $inPageFilterDate = $input['components'][0]['updates']['tableFilters.visit_date.created_from'];
+                                $invoices->whereDate('created_at', $inPageFilterDate);
+                            }
                         } else {
                             $currentDate = Carbon::now()->format('Y-m-d');
                             $invoices->whereDate('created_at', $currentDate);

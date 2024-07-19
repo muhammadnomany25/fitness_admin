@@ -47,6 +47,7 @@ class TechnicianResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('phoneNumber')
+                    ->unique()
                     ->label(trans('technicians.phoneNumber'))
                     ->tel()
                     ->telRegex('/^([4569]\d{7})$/')

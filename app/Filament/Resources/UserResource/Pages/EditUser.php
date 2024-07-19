@@ -74,12 +74,12 @@ class EditUser extends EditRecord
                     ->email()
                     ->required()
                     ->maxLength(255)
-                    ->visible(fn (User $record) => $record->email != 'admin@akc.com'),
+                    ->visible(fn (User $record) => $record->email != 'super@akc.com'),
 
-                Forms\Components\CheckboxList::make('roles')
-                    ->label(trans('users.roles'))
-                    ->relationship('roles', 'name')
-                    ->visible(fn (User $record) => $record->email != 'admin@akc.com')
+//                Forms\Components\CheckboxList::make('roles')
+//                    ->label(trans('users.roles'))
+//                    ->relationship('roles', 'name')
+//                    ->visible(fn (User $record) => $record->email != 'admin@akc.com')
             ]);
     }
 }
