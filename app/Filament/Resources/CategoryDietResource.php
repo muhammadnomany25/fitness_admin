@@ -16,6 +16,10 @@ class CategoryDietResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Diet';
+    }
     public static function form(Form $form): Form
     {
         return $form
@@ -28,10 +32,12 @@ class CategoryDietResource extends Resource
                     ->columnSpan(2),
                 Forms\Components\TextInput::make('titleAr')
                     ->maxLength(255)
-                    ->default(null),
+                    ->default(null)
+                    ->required(),
                 Forms\Components\TextInput::make('titleEn')
                     ->maxLength(255)
-                    ->default(null),
+                    ->default(null)
+                    ->required(),
             ]);
     }
 

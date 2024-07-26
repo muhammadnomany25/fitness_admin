@@ -10,6 +10,6 @@ return [
 
     'orders_group' => 'Orders',
     'reports_group' => 'Financial Reports',
-    'users_group' => 'Employees',
+    'users_group' => 'System Users',
 
 ];

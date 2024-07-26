@@ -11,6 +11,6 @@ return [
 
     'orders_group' => 'الطلبات',
     'reports_group' => 'التقارير المالية',
-    'users_group' => 'الموظفين',
+    'users_group' => 'مستخدمين النظام',
 
 ];

@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\Order;
-use App\Observers\OrderObserver;
 use Filament\Facades\Filament;
 use Filament\Navigation\NavigationGroup;
 use Illuminate\Support\Facades\App;
@@ -41,15 +39,15 @@ class AppServiceProvider extends ServiceProvider
         Filament::serving(function () {
             Filament::registerNavigationGroups([
                 NavigationGroup::make()
-                    ->label(trans('general.orders_group'))
-                    ->icon('heroicon-s-shopping-cart'),
-                NavigationGroup::make()
-                    ->label(trans('general.reports_group'))
-                    ->icon('heroicon-o-currency-dollar'),
-                NavigationGroup::make()
                     ->label(trans('general.users_group'))
                     ->icon('heroicon-o-user')
                     ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Diet')
+                    ->icon('heroicon-s-shopping-cart'),
+                NavigationGroup::make()
+                    ->label('Workouts')
+                    ->icon('heroicon-o-currency-dollar'),
             ]);
         });
 

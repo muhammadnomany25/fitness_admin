@@ -18,6 +18,11 @@ class ClientResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getNavigationGroup(): ?string
+    {
+        return trans('general.users_group');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -48,6 +53,9 @@ class ClientResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('image')
+                    ->circular()
+                    ->default('01J3PB77E408RVYFJ0RAH38Q7S.png'),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->width('50px')
@@ -56,13 +64,27 @@ class ClientResource extends Resource
                     ->searchable()
                     ->width('50px')
                     ->width('1%'),
-
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('gender')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('weight')
+                    ->numeric(),
+                Tables\Columns\TextColumn::make('height')
+                    ->numeric(),
+                Tables\Columns\TextColumn::make('age')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('bmi')
+                    ->numeric(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
 

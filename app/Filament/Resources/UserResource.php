@@ -57,10 +57,6 @@ class UserResource extends Resource
                     ->password()
                     ->required()
                     ->maxLength(255),
-//                Forms\Components\CheckboxList::make('roles')
-//                    ->label(trans('users.roles'))
-//                    ->relationship('roles', 'name')
-//                    ->required()
             ]);
     }
 
