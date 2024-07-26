@@ -55,7 +55,7 @@ class ClientResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->circular()
-                    ->default('01J3PB77E408RVYFJ0RAH38Q7S.png'),
+                    ->default('default_user.png'),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->width('50px')
