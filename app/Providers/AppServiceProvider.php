@@ -26,13 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Order::observe(OrderObserver::class);
 
         if (auth()->check()) {
             Config::set('app.timezone', auth()->user()->timezone);
         }
 
-        $locale = session('locale', 'ar'); // Default to English if no locale is set in the session
+        $locale = session('locale', 'en'); // Default to English if no locale is set in the session
         App::setLocale($locale);
 
         if (class_exists(ExcelServiceProvider::class)) {

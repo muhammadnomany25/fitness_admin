@@ -17,7 +17,8 @@
         "livewire/livewire": "^3.5",
         "psr/simple-cache": "^2.0",
         "pxlrbt/filament-excel": "^2.3",
-        "shipu/web-installer": "^1.0"
+        "shipu/web-installer": "^1.0",
+        "webplusm/gallery-json-media": "^2.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
