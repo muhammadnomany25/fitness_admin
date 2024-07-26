@@ -19,3 +19,7 @@ Route::redirect('/', '/admin');
 Route::get('/run-migrations', function () {
     return Artisan::call('migrate', ["--force" => true ]);
 });
+
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
