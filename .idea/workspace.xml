@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# diet apis">
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# misc updates">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +274,7 @@
       <workItem from="1721873996815" duration="2737000" />
       <workItem from="1721952951069" duration="12889000" />
       <workItem from="1723035795079" duration="3838000" />
-      <workItem from="1723068889982" duration="2025000" />
+      <workItem from="1723068889982" duration="2343000" />
     </task>
     <task id="LOCAL-00001" summary="# initial commit">
       <option name="closed" value="true" />
@@ -589,7 +588,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723071415556</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="# misc updates">
+      <option name="closed" value="true" />
+      <created>1723072671107</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1723072671107</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,11 +636,11 @@
     <MESSAGE value="# clients&#10;# remove un needed code&#10;# diet flow" />
     <MESSAGE value="# exercises flow" />
     <MESSAGE value="# .env update" />
-    <MESSAGE value="# misc updates" />
     <MESSAGE value="# misc updates (storage link)" />
     <MESSAGE value="# misc updates (filesystems)" />
     <MESSAGE value="# misc updates (default user image)" />
     <MESSAGE value="# diet apis" />
-    <option name="LAST_COMMIT_MESSAGE" value="# diet apis" />
+    <MESSAGE value="# misc updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="# misc updates" />
   </component>
 </project>
