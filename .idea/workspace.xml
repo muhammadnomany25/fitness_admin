@@ -4,9 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# misc updates">
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# misc updates (default user image)">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/app_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enums/OrderStatus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filament/Resources/CategoryDietResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filament/Resources/CategoryDietResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FixItemsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TechnicianController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CategoryDiet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CategoryDiet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2024_07_26_032727_create_category_diets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2024_07_26_032727_create_category_diets_table__.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2024_07_26_033219_create_diets_table____.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2024_07_26_033219_create_diets_table_____.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/12/e1/12e1ffc4e4a3e8330b657a92b03cea70924f74c1" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/12/e1/12e1ffc4e4a3e8330b657a92b03cea70924f74c1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/72/bb/72bbdefd53b8340082ede3a4e68e514767ff0b35" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/72/bb/72bbdefd53b8340082ede3a4e68e514767ff0b35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/76/e7/76e7c0fdd0cc0d46502f9d381b947cdf6aa69891" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/76/e7/76e7c0fdd0cc0d46502f9d381b947cdf6aa69891" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/9c/1c/9c1c01dc3ac1445a500251fc34a15d3e75a849df" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/9c/1c/9c1c01dc3ac1445a500251fc34a15d3e75a849df" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/sessions/rNmKV75as6QHsAiVRgErRUW0z3LzOeTyJT3YvG9b" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/rNmKV75as6QHsAiVRgErRUW0z3LzOeTyJT3YvG9b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +249,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/noamany/Desktop/untitled folder 2/projects/MuGaber/7aseeb/Formado Admin panel/database/migrations&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/noamany/Desktop/untitled folder 2/projects/MuGaber/7aseeb/Formado Admin panel&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -239,13 +261,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/app/public" />
+      <recent name="$PROJECT_DIR$/public/storage" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/database/migrations" />
-      <recent name="$PROJECT_DIR$/app/Models" />
-      <recent name="$PROJECT_DIR$/app/Services" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/resources/lang/en" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/vendor/filament-panels/components" />
       <recent name="$PROJECT_DIR$/app/Services" />
     </key>
   </component>
@@ -272,7 +295,9 @@
       <workItem from="1721387131889" duration="1153000" />
       <workItem from="1721871275630" duration="2241000" />
       <workItem from="1721873996815" duration="2737000" />
-      <workItem from="1721952951069" duration="9423000" />
+      <workItem from="1721952951069" duration="12889000" />
+      <workItem from="1723035795079" duration="3838000" />
+      <workItem from="1723068889982" duration="987000" />
     </task>
     <task id="LOCAL-00001" summary="# initial commit">
       <option name="closed" value="true" />
@@ -514,7 +539,71 @@
       <option name="project" value="LOCAL" />
       <updated>1721961983906</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="# misc updates">
+      <option name="closed" value="true" />
+      <created>1721962601239</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1721962601239</updated>
+    </task>
+    <task id="LOCAL-00032" summary="# misc updates (storage link)">
+      <option name="closed" value="true" />
+      <created>1721962676689</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1721962676689</updated>
+    </task>
+    <task id="LOCAL-00033" summary="# misc updates (filesystems)">
+      <option name="closed" value="true" />
+      <created>1721963126304</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1721963126304</updated>
+    </task>
+    <task id="LOCAL-00034" summary="# misc updates (filesystems)">
+      <option name="closed" value="true" />
+      <created>1721963240238</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1721963240238</updated>
+    </task>
+    <task id="LOCAL-00035" summary="# misc updates (filesystems)">
+      <option name="closed" value="true" />
+      <created>1721963311452</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1721963311452</updated>
+    </task>
+    <task id="LOCAL-00036" summary="# misc updates (filesystems)">
+      <option name="closed" value="true" />
+      <created>1721963567183</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1721963567183</updated>
+    </task>
+    <task id="LOCAL-00037" summary="# misc updates (filesystems)">
+      <option name="closed" value="true" />
+      <created>1721963595878</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1721963595878</updated>
+    </task>
+    <task id="LOCAL-00038" summary="# misc updates (default user image)">
+      <option name="closed" value="true" />
+      <created>1721963741313</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1721963741313</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,9 +623,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# daily reports&#10;# manual payments" />
-    <MESSAGE value="# app name change" />
-    <MESSAGE value="# Due payments localization&#10;# fixing issues" />
     <MESSAGE value="# fixing issues&#10;# technician and orders apis" />
     <MESSAGE value="# auth interceptors" />
     <MESSAGE value="# api responses refactoring" />
@@ -559,6 +645,9 @@
     <MESSAGE value="# exercises flow" />
     <MESSAGE value="# .env update" />
     <MESSAGE value="# misc updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="# misc updates" />
+    <MESSAGE value="# misc updates (storage link)" />
+    <MESSAGE value="# misc updates (filesystems)" />
+    <MESSAGE value="# misc updates (default user image)" />
+    <option name="LAST_COMMIT_MESSAGE" value="# misc updates (default user image)" />
   </component>
 </project>

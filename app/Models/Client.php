@@ -20,7 +20,7 @@ class Client extends Model
         'email',
         'phoneNumber',
         'password',
-        'gender_id',
+        'gender',
         'weight',
         'height',
         'age',
@@ -33,7 +33,6 @@ class Client extends Model
         'id' => 'integer',
         'weight' => 'integer',
         'height' => 'integer',
-        'gender_id' => 'integer',
         'age' => 'integer',
         'bmi' => 'double',
         // Add other integer columns here

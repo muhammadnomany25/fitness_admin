@@ -18,10 +18,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/technician/login', [\App\Http\Controllers\TechnicianController::class, 'login']);
+// Client Auth
+Route::post('/signup', [\App\Http\Controllers\ClientController::class, 'signup']);
 
-Route::middleware('auth:sanctum')->get('/orders/techOrders', [\App\Http\Controllers\OrderController::class, 'techOrders']);
-Route::middleware('auth:sanctum')->get('/fixItems/all', [\App\Http\Controllers\FixItemsController::class, 'fixItems']);
-Route::middleware('auth:sanctum')->post('/technician/completeOrder', [\App\Http\Controllers\TechnicianController::class, 'completeOrder']);
-Route::middleware('auth:sanctum')->post('/technician/updateFcmToken', [\App\Http\Controllers\TechnicianController::class, 'updateFcmToken']);
+Route::post('/login', [\App\Http\Controllers\ClientController::class, 'login']);
+
+Route::middleware('auth:sanctum')->put('/completeProfile', [\App\Http\Controllers\ClientController::class, 'completeProfile']);
+
+// Diet
+Route::middleware('auth:sanctum')->get('/dietCats/all', [\App\Http\Controllers\DietsController::class, 'dietCats']);
+Route::middleware('auth:sanctum')->get('/dietMeals/all', [\App\Http\Controllers\DietsController::class, 'dietMeals']);
+Route::middleware('auth:sanctum')->get('/snacksDietMeals/all', [\App\Http\Controllers\DietsController::class, 'snacksDietMeals']);
 

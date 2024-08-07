@@ -5,9 +5,11 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CategoryDietResource\Pages;
 use App\Models\CategoryDiet;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 
 class CategoryDietResource extends Resource
@@ -30,6 +32,11 @@ class CategoryDietResource extends Resource
                     ->offColor('danger')
                     ->default('1')
                     ->columnSpan(2),
+                FileUpload::make('image')
+                    ->image()
+                    ->openable()
+                    ->required()
+                    ->columnSpan(2),
                 Forms\Components\TextInput::make('titleAr')
                     ->maxLength(255)
                     ->default(null)
@@ -45,6 +52,7 @@ class CategoryDietResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('image')->circular(),
                 Tables\Columns\TextColumn::make('titleAr')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('titleEn')

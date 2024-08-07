@@ -9,5 +9,5 @@ class CategoryDiet extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'titleAr', 'titleEn','status' ];
+    protected $fillable = ['titleAr', 'titleEn', 'image', 'status'];
 }
