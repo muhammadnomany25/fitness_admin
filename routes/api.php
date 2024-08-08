@@ -26,11 +26,18 @@ Route::post('/login', [\App\Http\Controllers\ClientController::class, 'login']);
 Route::middleware('auth:sanctum')->put('/completeProfile', [\App\Http\Controllers\ClientController::class, 'completeProfile']);
 
 // Diet
-Route::get('/dietCats/all', [\App\Http\Controllers\DietsController::class, 'dietCats']);
-Route::get('/dietMeals/all', [\App\Http\Controllers\DietsController::class, 'dietMeals']);
-Route::get('/snacksDietMeals/all', [\App\Http\Controllers\DietsController::class, 'snacksDietMeals']);
-Route::get('/breakfastDietMeals/all', [\App\Http\Controllers\DietsController::class, 'breakfastDietMeals']);
-Route::get('/launchDietMeals/all', [\App\Http\Controllers\DietsController::class, 'launchDietMeals']);
-Route::get('/dinnerDietMeals/all', [\App\Http\Controllers\DietsController::class, 'dinnerDietMeals']);
-Route::get('/summary', [\App\Http\Controllers\DietsController::class, 'summary']);
+Route::get('/diet/cats/all', [\App\Http\Controllers\DietsController::class, 'dietCats']);
+Route::get('/diet/dietMeals/all', [\App\Http\Controllers\DietsController::class, 'dietMeals']);
+Route::get('/diet/snacksMeals/all', [\App\Http\Controllers\DietsController::class, 'snacksDietMeals']);
+Route::get('/diet/breakfastMeals/all', [\App\Http\Controllers\DietsController::class, 'breakfastDietMeals']);
+Route::get('/diet/launchMeals/all', [\App\Http\Controllers\DietsController::class, 'launchDietMeals']);
+Route::get('/diet/dinnerMeals/all', [\App\Http\Controllers\DietsController::class, 'dinnerDietMeals']);
+Route::get('/diet/summary', [\App\Http\Controllers\DietsController::class, 'summary']);
+
+//Workouts
+Route::get('/workouts/summary', [\App\Http\Controllers\WorkoutsController::class, 'summary']);
+Route::get('/workouts/bodyParts', [\App\Http\Controllers\WorkoutsController::class, 'bodyParts']);
+Route::get('/workouts/equipments', [\App\Http\Controllers\WorkoutsController::class, 'equipments']);
+Route::get('/workouts/exercises', [\App\Http\Controllers\WorkoutsController::class, 'exercises']);
+
 

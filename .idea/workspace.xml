@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# refactoring of diet routes">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" afterDir="false" />
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# diet missing apis.">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Filament/Resources/ExerciseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filament/Resources/ExerciseResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +278,7 @@
       <workItem from="1721873996815" duration="2737000" />
       <workItem from="1721952951069" duration="12889000" />
       <workItem from="1723035795079" duration="3838000" />
-      <workItem from="1723068889982" duration="5592000" />
+      <workItem from="1723068889982" duration="6531000" />
     </task>
     <task id="LOCAL-00001" summary="# initial commit">
       <option name="closed" value="true" />
@@ -619,7 +616,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723073436279</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="# diet missing apis.">
+      <option name="closed" value="true" />
+      <created>1723076226756</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1723076226756</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +644,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# technician complete order api" />
     <MESSAGE value="# technician complete order api fix" />
     <MESSAGE value="# order invoices, disable deletion" />
     <MESSAGE value="# tech orders api edit&#10;# misc updates" />
@@ -664,6 +668,7 @@
     <MESSAGE value="# misc updates" />
     <MESSAGE value="# misc updates(storage link)" />
     <MESSAGE value="# refactoring of diet routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="# refactoring of diet routes" />
+    <MESSAGE value="# diet missing apis." />
+    <option name="LAST_COMMIT_MESSAGE" value="# diet missing apis." />
   </component>
 </project>

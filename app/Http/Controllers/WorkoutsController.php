@@ -2,52 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoryDiet;
-use App\Models\Diet;
-use App\Models\Order;
+use App\Models\BodyPart;
+use App\Models\Equipment;
+use App\Models\Exercise;
 use Illuminate\Http\Request;
 
 class WorkoutsController extends Controller
 {
 
-    public function dietCats(Request $request)
+    public function summary(Request $request)
     {
-        $items = CategoryDiet::get();
+        $bodyParts = BodyPart::latest()
+            ->take(5)
+            ->get();
+
+        $equipments = BodyPart::latest()
+            ->take(5)
+            ->get();
+
+        $workouts = Exercise::latest()
+            ->take(5)
+            ->get();
+
+        return response()->json(['data' => ['bodyParts' => $bodyParts, 'equipments' => $equipments, 'exercises' => $workouts]], 200);
+    }
+
+    public function bodyParts(Request $request)
+    {
+        $items = BodyPart::get();
 
         return response()->json(['data' => $items], 200);
     }
 
-    public function dietMeals(Request $request)
+    public function equipments(Request $request)
     {
-        $cats = Diet::get();
-
-        return response()->json(['data' => $cats], 200);
-    }
-
-    public function snacksDietMeals(Request $request)
-    {
-        $items = Diet::whereJsonContains('suitable_for', 'snacks')->get();
+        $items = Equipment::get();
 
         return response()->json(['data' => $items], 200);
     }
 
-    public function breakfastDietMeals(Request $request)
+    public function exercises(Request $request)
     {
-        $items = Diet::whereJsonContains('suitable_for', 'breakfast')->get();
-
-        return response()->json(['data' => $items], 200);
-    }
-
-    public function launchDietMeals(Request $request)
-    {
-        $items = Diet::whereJsonContains('suitable_for', 'launch')->get();
-
-        return response()->json(['data' => $items], 200);
-    }
-
-    public function dinnerDietMeals(Request $request)
-    {
-        $items = Diet::whereJsonContains('suitable_for', 'dinner')->get();
+        $items = Exercise::get();
 
         return response()->json(['data' => $items], 200);
     }
