@@ -29,4 +29,8 @@ Route::middleware('auth:sanctum')->put('/completeProfile', [\App\Http\Controller
 Route::get('/dietCats/all', [\App\Http\Controllers\DietsController::class, 'dietCats']);
 Route::get('/dietMeals/all', [\App\Http\Controllers\DietsController::class, 'dietMeals']);
 Route::get('/snacksDietMeals/all', [\App\Http\Controllers\DietsController::class, 'snacksDietMeals']);
+Route::get('/breakfastDietMeals/all', [\App\Http\Controllers\DietsController::class, 'breakfastDietMeals']);
+Route::get('/launchDietMeals/all', [\App\Http\Controllers\DietsController::class, 'launchDietMeals']);
+Route::get('/dinnerDietMeals/all', [\App\Http\Controllers\DietsController::class, 'dinnerDietMeals']);
+Route::get('/summary', [\App\Http\Controllers\DietsController::class, 'summary']);
 

@@ -60,19 +60,15 @@ class ExerciseResource extends Resource
                     ->label('Required Equipment')
                     ->preload(),
                 Forms\Components\MarkdownEditor::make('descriptionAr')
-                    ->maxLength(255)
                     ->default(null)
                     ->required(),
                 Forms\Components\MarkdownEditor::make('descriptionEn')
-                    ->maxLength(255)
                     ->default(null)
                     ->required(),
                 Forms\Components\TextInput::make('videoUrl')
-                    ->maxLength(255)
                     ->default(null)
                     ->required(),
                 Forms\Components\TextInput::make('duration')
-                    ->maxLength(255)
                     ->default(null)
                     ->numeric()
                     ->suffix('minutes')
