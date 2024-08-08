@@ -24,7 +24,7 @@ class WorkoutsController extends Controller
             ->take(5)
             ->get();
 
-        return response()->json(['data' => ['bodyParts' => $bodyParts, 'equipments' => $equipments, 'exercises' => $workouts]], 200);
+        return response()->json(['data' => ['bodyParts' => $bodyParts, 'equipments' => $equipments, 'workouts' => $workouts]], 200);
     }
 
     public function bodyParts(Request $request)
