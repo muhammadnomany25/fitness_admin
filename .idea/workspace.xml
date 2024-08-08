@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# diet missing apis.">
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# workouts apis misc">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +275,7 @@
       <workItem from="1721873996815" duration="2737000" />
       <workItem from="1721952951069" duration="12889000" />
       <workItem from="1723035795079" duration="3838000" />
-      <workItem from="1723068889982" duration="6531000" />
+      <workItem from="1723068889982" duration="7414000" />
     </task>
     <task id="LOCAL-00001" summary="# initial commit">
       <option name="closed" value="true" />
@@ -624,7 +621,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723076226756</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="# workouts apis">
+      <option name="closed" value="true" />
+      <created>1723077136640</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1723077136640</updated>
+    </task>
+    <task id="LOCAL-00045" summary="# workouts apis misc">
+      <option name="closed" value="true" />
+      <created>1723077690305</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1723077690305</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,8 +657,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# technician complete order api fix" />
-    <MESSAGE value="# order invoices, disable deletion" />
     <MESSAGE value="# tech orders api edit&#10;# misc updates" />
     <MESSAGE value="# unassign tech from order on complete it." />
     <MESSAGE value="# technician fcm_token" />
@@ -669,6 +680,8 @@
     <MESSAGE value="# misc updates(storage link)" />
     <MESSAGE value="# refactoring of diet routes" />
     <MESSAGE value="# diet missing apis." />
-    <option name="LAST_COMMIT_MESSAGE" value="# diet missing apis." />
+    <MESSAGE value="# workouts apis" />
+    <MESSAGE value="# workouts apis misc" />
+    <option name="LAST_COMMIT_MESSAGE" value="# workouts apis misc" />
   </component>
 </project>

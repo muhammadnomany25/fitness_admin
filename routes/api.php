@@ -36,8 +36,8 @@ Route::get('/diet/summary', [\App\Http\Controllers\DietsController::class, 'summ
 
 //Workouts
 Route::get('/workouts/summary', [\App\Http\Controllers\WorkoutsController::class, 'summary']);
-Route::get('/workouts/bodyParts', [\App\Http\Controllers\WorkoutsController::class, 'bodyParts']);
-Route::get('/workouts/equipments', [\App\Http\Controllers\WorkoutsController::class, 'equipments']);
-Route::get('/workouts/exercises', [\App\Http\Controllers\WorkoutsController::class, 'exercises']);
+Route::get('/workouts/bodyParts/all', [\App\Http\Controllers\WorkoutsController::class, 'bodyParts']);
+Route::get('/workouts/equipments/all', [\App\Http\Controllers\WorkoutsController::class, 'equipments']);
+Route::get('/workouts/exercises/all', [\App\Http\Controllers\WorkoutsController::class, 'exercises']);
 
 
