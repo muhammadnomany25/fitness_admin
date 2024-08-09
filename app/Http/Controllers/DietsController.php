@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CategoryDiet;
 use App\Models\Diet;
+use App\Models\Exercise;
 use Illuminate\Http\Request;
 
 class DietsController extends Controller
@@ -78,5 +79,12 @@ class DietsController extends Controller
             ->get();
 
         return response()->json(['data' => ['categories' => $dietCats, 'snackMeals' => $snackDiet, 'breakfastMeals' => $breakfastDiet, 'launchMeals' => $launchDiet, 'dinnerMeals' => $dinnerDiet]], 200);
+    }
+
+    public function dietCategoryMeals($id)
+    {
+        $items = Diet::where('category_diet_id', $id)->get();
+
+        return response()->json(['data' => $items], 200);
     }
 }

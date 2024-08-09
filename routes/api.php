@@ -33,6 +33,7 @@ Route::get('/diet/breakfastMeals/all', [\App\Http\Controllers\DietsController::c
 Route::get('/diet/launchMeals/all', [\App\Http\Controllers\DietsController::class, 'launchDietMeals']);
 Route::get('/diet/dinnerMeals/all', [\App\Http\Controllers\DietsController::class, 'dinnerDietMeals']);
 Route::get('/diet/summary', [\App\Http\Controllers\DietsController::class, 'summary']);
+Route::get('/workouts/dietCategoryMeals/{id}', [\App\Http\Controllers\DietsController::class, 'dietCategoryMeals']);
 
 //Workouts
 Route::get('/workouts/summary', [\App\Http\Controllers\WorkoutsController::class, 'summary']);
@@ -41,5 +42,6 @@ Route::get('/workouts/equipments/all', [\App\Http\Controllers\WorkoutsController
 Route::get('/workouts/exercises/all', [\App\Http\Controllers\WorkoutsController::class, 'exercises']);
 Route::get('/workouts/bodyPartExercises/{id}', [\App\Http\Controllers\WorkoutsController::class, 'bodyPartExercises']);
 Route::get('/workouts/equipmentExercises/{id}', [\App\Http\Controllers\WorkoutsController::class, 'equipmentExercises']);
+
 
 
