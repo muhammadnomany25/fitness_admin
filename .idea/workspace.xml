@@ -7,6 +7,11 @@
     <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# workouts apis misc">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/12/e1/12e1ffc4e4a3e8330b657a92b03cea70924f74c1" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/12/e1/12e1ffc4e4a3e8330b657a92b03cea70924f74c1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/72/bb/72bbdefd53b8340082ede3a4e68e514767ff0b35" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/72/bb/72bbdefd53b8340082ede3a4e68e514767ff0b35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/rNmKV75as6QHsAiVRgErRUW0z3LzOeTyJT3YvG9b" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +280,8 @@
       <workItem from="1721873996815" duration="2737000" />
       <workItem from="1721952951069" duration="12889000" />
       <workItem from="1723035795079" duration="3838000" />
-      <workItem from="1723068889982" duration="7414000" />
+      <workItem from="1723068889982" duration="8265000" />
+      <workItem from="1723209945820" duration="486000" />
     </task>
     <task id="LOCAL-00001" summary="# initial commit">
       <option name="closed" value="true" />
@@ -637,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723077690305</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="# workouts apis misc">
+      <option name="closed" value="true" />
+      <created>1723078075285</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1723078075285</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

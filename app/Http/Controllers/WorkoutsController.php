@@ -47,4 +47,18 @@ class WorkoutsController extends Controller
 
         return response()->json(['data' => $items], 200);
     }
+
+    public function bodyPartExercises($id)
+    {
+        $items = Exercise::where('body_part_id', $id)->get();
+
+        return response()->json(['data' => $items], 200);
+    }
+
+    public function equipmentExercises($id)
+    {
+        $items = Exercise::where('equipment_id', $id)->get();
+
+        return response()->json(['data' => $items], 200);
+    }
 }
