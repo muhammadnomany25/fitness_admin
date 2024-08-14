@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Client extends Model
+class Client extends Authenticatable
 {
     use HasFactory, HasApiTokens;
 
@@ -43,5 +43,10 @@ class Client extends Model
     public function gender()
     {
         return $this->belongsTo(Gender::class);
+    }
+
+    public function waterLogs()
+    {
+        return $this->hasMany(WaterLog::class);
     }
 }

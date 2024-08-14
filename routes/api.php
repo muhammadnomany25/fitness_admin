@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WaterLogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -43,5 +44,12 @@ Route::get('/workouts/exercises/all', [\App\Http\Controllers\WorkoutsController:
 Route::get('/workouts/bodyPartExercises/{id}', [\App\Http\Controllers\WorkoutsController::class, 'bodyPartExercises']);
 Route::get('/workouts/equipmentExercises/{id}', [\App\Http\Controllers\WorkoutsController::class, 'equipmentExercises']);
 
+
+//Water Logger
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/waterLog/summary', [WaterLogController::class, 'summary']);
+    Route::delete('/waterLog/delete', [WaterLogController::class, 'delete']);
+    Route::put('/waterLog/add', [WaterLogController::class, 'add']);
+});
 
 

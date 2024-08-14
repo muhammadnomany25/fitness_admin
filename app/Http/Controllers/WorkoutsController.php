@@ -16,7 +16,7 @@ class WorkoutsController extends Controller
             ->take(5)
             ->get();
 
-        $equipments = BodyPart::latest()
+        $equipments = Equipment::latest()
             ->take(5)
             ->get();
 
