@@ -13,15 +13,15 @@ class WorkoutsController extends Controller
     public function summary(Request $request)
     {
         $bodyParts = BodyPart::latest()
-            ->take(1)
+            ->take(5)
             ->get();
 
         $equipments = Equipment::latest()
-            ->take(1)
+            ->take(5)
             ->get();
 
         $workouts = Exercise::latest()
-            ->take(1)
+            ->take(5)
             ->get();
 
         return response()->json(['data' => ['bodyParts' => $bodyParts, 'equipments' => $equipments, 'workouts' => $workouts]], 200);
