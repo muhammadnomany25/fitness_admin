@@ -13,11 +13,11 @@ class WorkoutsController extends Controller
     public function summary(Request $request)
     {
         $bodyParts = BodyPart::latest()
-            ->take(5)
+            ->take(1)
             ->get();
 
         $equipments = Equipment::latest()
-            ->take(5)
+            ->take(1)
             ->get();
 
         $workouts = Exercise::latest()

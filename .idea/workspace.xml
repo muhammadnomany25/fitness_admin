@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# diet meals missing apis">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/WaterLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# misc updates (test all workouts in home)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,14 +277,7 @@
       <workItem from="1723035795079" duration="3838000" />
       <workItem from="1723068889982" duration="8265000" />
       <workItem from="1723209945820" duration="5434000" />
-    </task>
-    <task id="LOCAL-00001" summary="# initial commit">
-      <option name="closed" value="true" />
-      <created>1720205952259</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1720205952259</updated>
+      <workItem from="1723634992466" duration="964000" />
     </task>
     <task id="LOCAL-00002" summary="# invoices columns fix">
       <option name="closed" value="true" />
@@ -669,7 +655,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723210974233</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="# water tracker and missing apis">
+      <option name="closed" value="true" />
+      <created>1723635049194</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1723635049194</updated>
+    </task>
+    <task id="LOCAL-00050" summary="# misc updates (test all workouts in home)">
+      <option name="closed" value="true" />
+      <created>1723635552697</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1723635552697</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,8 +691,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# technician fcm_token" />
-    <MESSAGE value="# push notifications" />
     <MESSAGE value="# .env fix" />
     <MESSAGE value="# order resource misc updates" />
     <MESSAGE value="# remove secrets" />
@@ -714,6 +714,8 @@
     <MESSAGE value="# workouts apis misc" />
     <MESSAGE value="# workouts missing apis" />
     <MESSAGE value="# diet meals missing apis" />
-    <option name="LAST_COMMIT_MESSAGE" value="# diet meals missing apis" />
+    <MESSAGE value="# water tracker and missing apis" />
+    <MESSAGE value="# misc updates (test all workouts in home)" />
+    <option name="LAST_COMMIT_MESSAGE" value="# misc updates (test all workouts in home)" />
   </component>
 </project>
