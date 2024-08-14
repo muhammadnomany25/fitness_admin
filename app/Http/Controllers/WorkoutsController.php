@@ -21,7 +21,7 @@ class WorkoutsController extends Controller
             ->get();
 
         $workouts = Exercise::latest()
-            ->take(5)
+            ->take(1)
             ->get();
 
         return response()->json(['data' => ['bodyParts' => $bodyParts, 'equipments' => $equipments, 'workouts' => $workouts]], 200);
