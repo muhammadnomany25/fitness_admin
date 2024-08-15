@@ -48,6 +48,7 @@ Route::get('/workouts/equipmentExercises/{id}', [\App\Http\Controllers\WorkoutsC
 //Water Logger
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/waterLog/summary', [WaterLogController::class, 'summary']);
+    Route::get('/waterLog/all', [WaterLogController::class, 'all']);
     Route::delete('/waterLog/delete', [WaterLogController::class, 'delete']);
     Route::put('/waterLog/add', [WaterLogController::class, 'add']);
 });

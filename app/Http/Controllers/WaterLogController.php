@@ -2,18 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\WaterRecordTypes;
 use App\Models\WaterLog;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class WaterLogController extends Controller
 {
     public function summary(Request $request)
     {
         // Fetch all water logs related to the authenticated user
-        $waterLogs = $request->user()->waterLogs()->get();
+        $waterLogs = $request->user()
+            ->waterLogs()->latest()->take(5)->get();
 
-        return response()->json($waterLogs);
+        $totalAmountDrunk = $waterLogs->sum('amount');
+        $totalToDrink = ($request->user()->weight * 55);
+        $percent = round(($totalAmountDrunk / $totalToDrink) * 100);
+
+        return response()->json(['data' => ['total'=> (string) $totalToDrink, 'todaysLog'=> (string) $totalAmountDrunk, 'todaysPercent' => (string) $percent, 'recentLogs' => $waterLogs]]);
+    }
+
+    public function all(Request $request)
+    {
+        // Fetch all water logs related to the authenticated user
+        $waterLogs = $request->user()
+            ->waterLogs()->latest()->get();
+
+        return response()->json(['data' => $waterLogs]);
     }
 
     public function add(Request $request)
@@ -23,23 +37,20 @@ class WaterLogController extends Controller
             'type' => 'required|string',
         ]);
 
-        // Add user_id to the validated data
-        $validatedData['client_id'] = $request->user()->id();
-
         $recordType = $request->type;
 
-        if ($recordType == env('SMALL_CUP')) {
-            $nameEn = '';
-            $nameAr = '';
-            $amount = '';
-        } else if ($recordType == env('MEDIUM_CUP')) {
-            $nameEn = '';
-            $nameAr = '';
-            $amount = '';
-        } else if ($recordType == env('LARGE_CUP')) {
-            $nameEn = '';
-            $nameAr = '';
-            $amount = '';
+        if ($recordType == WaterRecordTypes::SMALL_CUP->value) {
+            $nameEn = 'Cup';
+            $nameAr = 'كوب';
+            $amount = '100';
+        } else if ($recordType == WaterRecordTypes::MEDIUM_CUP->value) {
+            $nameEn = 'Medium Cup';
+            $nameAr = 'كوب متوسط';
+            $amount = '180';
+        } else if ($recordType == WaterRecordTypes::LARGE_CUP->value) {
+            $nameEn = 'Large Cup';
+            $nameAr = 'كوب كبير';
+            $amount = '250';
         }
 
         $waterLog = new WaterLog();
@@ -47,20 +58,26 @@ class WaterLogController extends Controller
         $waterLog->nameAr = $nameAr;
         $waterLog->nameEn = $nameEn;
         $waterLog->amount = $amount;
-        $waterLog->client_id = $request->user()->id();
+        $waterLog->client_id = $request->user()->id;
 
         // Create a new water log
-        $waterLog = WaterLog::create($validatedData);
+        $waterLog->save();
 
-        return response()->json($waterLog, 201);
+        return response()->json(['data' => $waterLog], 201);
     }
 
-    public function delete($request)
+    public function delete(Request $request)
     {
+        $validatedData = $request->validate([
+            'id' => 'required|int',
+        ]);
+
+        $raw_id = $validatedData["id"];
+
         // Find the water log and delete it
-        $waterLog = $request->user()->waterLogs()->findOrFail($request->id);
+        $waterLog = $request->user()->waterLogs()->findOrFail($raw_id);
         $waterLog->delete();
 
-        return response()->json(null, 204);
+        return response()->json(null);
     }
 }
