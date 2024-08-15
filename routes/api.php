@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\DietFavouriteController;
 use App\Http\Controllers\WaterLogController;
+use App\Http\Controllers\WorkoutFavouriteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -53,4 +55,17 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/waterLog/add', [WaterLogController::class, 'add']);
 });
 
+// Diet Favs
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/favourites/diet/add', [DietFavouriteController::class, 'addToFavourite']);
+    Route::delete('/favourites/diet/remove', [DietFavouriteController::class, 'removeFromFavourite']);
+    Route::get('/favourites/diet/all', [DietFavouriteController::class, 'getFavourites']);
+});
+
+// Exercises Favs
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/favourites/exercise/add', [WorkoutFavouriteController::class, 'addToFavourite']);
+    Route::delete('/favourites/exercise/remove', [WorkoutFavouriteController::class, 'removeFromFavourite']);
+    Route::get('/favourites/exercise/all', [WorkoutFavouriteController::class, 'getFavourites']);
+});
 

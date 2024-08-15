@@ -20,4 +20,9 @@ class Diet extends Model
     {
         return $this->belongsTo(CategoryDiet::class);
     }
+
+    public function favourites()
+    {
+        return $this->hasMany(DietFavourite::class, 'meal_id');
+    }
 }

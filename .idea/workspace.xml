@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# misc updates">
-      <change afterPath="$PROJECT_DIR$/app/Enums/WaterRecordTypes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/WaterLog.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2024_08_09_164752_create_water_logs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/water_logs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/water_logs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# water track logs apis.">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2024_08_15_082126_create_diet_favourites_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WaterLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WaterLogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Diet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Diet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Exercise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Exercise.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,22 +227,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/noamany/Desktop/untitled folder 2/projects/MuGaber/7aseeb/Formado Admin panel/resources/lang/en",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/noamany/Desktop/untitled folder 2/projects/MuGaber/7aseeb/Formado Admin panel/resources/lang/en&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/lang/en" />
@@ -286,15 +284,8 @@
       <workItem from="1723068889982" duration="8265000" />
       <workItem from="1723209945820" duration="5434000" />
       <workItem from="1723634992466" duration="2777000" />
-      <workItem from="1723688424437" duration="3249000" />
-    </task>
-    <task id="LOCAL-00004" summary="# artisan migration runner">
-      <option name="closed" value="true" />
-      <created>1720213622265</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1720213622265</updated>
+      <workItem from="1723688424437" duration="3538000" />
+      <workItem from="1723698780674" duration="2458000" />
     </task>
     <task id="LOCAL-00005" summary="# daily reports&#10;# manual payments">
       <option name="closed" value="true" />
@@ -680,7 +671,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723641013773</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="# water track logs apis.">
+      <option name="closed" value="true" />
+      <created>1723691717138</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1723691717139</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -700,7 +699,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# .env fix" />
     <MESSAGE value="# order resource misc updates" />
     <MESSAGE value="# remove secrets" />
     <MESSAGE value="# firebase admin file" />
@@ -725,6 +723,7 @@
     <MESSAGE value="# water tracker and missing apis" />
     <MESSAGE value="# misc updates (test all workouts in home)" />
     <MESSAGE value="# misc updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="# misc updates" />
+    <MESSAGE value="# water track logs apis." />
+    <option name="LAST_COMMIT_MESSAGE" value="# water track logs apis." />
   </component>
 </project>
