@@ -78,6 +78,6 @@ class WaterLogController extends Controller
         $waterLog = $request->user()->waterLogs()->findOrFail($raw_id);
         $waterLog->delete();
 
-        return response()->json(null);
+        return response()->json(['message' => 'Deleted Successfully']);
     }
 }
