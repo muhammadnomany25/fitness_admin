@@ -30,13 +30,16 @@ Route::middleware('auth:sanctum')->put('/completeProfile', [\App\Http\Controller
 
 // Diet
 Route::get('/diet/cats/all', [\App\Http\Controllers\DietsController::class, 'dietCats']);
-Route::get('/diet/dietMeals/all', [\App\Http\Controllers\DietsController::class, 'dietMeals']);
-Route::get('/diet/snacksMeals/all', [\App\Http\Controllers\DietsController::class, 'snacksDietMeals']);
-Route::get('/diet/breakfastMeals/all', [\App\Http\Controllers\DietsController::class, 'breakfastDietMeals']);
-Route::get('/diet/launchMeals/all', [\App\Http\Controllers\DietsController::class, 'launchDietMeals']);
-Route::get('/diet/dinnerMeals/all', [\App\Http\Controllers\DietsController::class, 'dinnerDietMeals']);
-Route::get('/diet/summary', [\App\Http\Controllers\DietsController::class, 'summary']);
-Route::get('/workouts/dietCategoryMeals/{id}', [\App\Http\Controllers\DietsController::class, 'dietCategoryMeals']);
+
+Route::middleware('api.optional.auth')->group(function () {
+    Route::get('/diet/dietMeals/all', [\App\Http\Controllers\DietsController::class, 'dietMeals']);
+    Route::get('/diet/snacksMeals/all', [\App\Http\Controllers\DietsController::class, 'snacksDietMeals']);
+    Route::get('/diet/breakfastMeals/all', [\App\Http\Controllers\DietsController::class, 'breakfastDietMeals']);
+    Route::get('/diet/launchMeals/all', [\App\Http\Controllers\DietsController::class, 'launchDietMeals']);
+    Route::get('/diet/dinnerMeals/all', [\App\Http\Controllers\DietsController::class, 'dinnerDietMeals']);
+    Route::get('/diet/summary', [\App\Http\Controllers\DietsController::class, 'summary']);
+    Route::get('/workouts/dietCategoryMeals/{id}', [\App\Http\Controllers\DietsController::class, 'dietCategoryMeals']);
+});
 
 //Workouts
 Route::get('/workouts/summary', [\App\Http\Controllers\WorkoutsController::class, 'summary']);

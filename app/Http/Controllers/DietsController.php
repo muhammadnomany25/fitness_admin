@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\CategoryDiet;
 use App\Models\Diet;
-use App\Models\Exercise;
 use Illuminate\Http\Request;
 
 class DietsController extends Controller
@@ -19,35 +18,134 @@ class DietsController extends Controller
 
     public function dietMeals(Request $request)
     {
-        $cats = Diet::get();
+        $user = $request->user();
+        if ($user) {
+            $userId = $user->id;
+            $meals = Diet::leftJoin('diet_favourites', function ($join) use ($userId) {
+                $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                    ->where('diet_favourites.client_id', '=', $userId);
+            })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        } else {
+            $meals = Diet::get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        }
 
-        return response()->json(['data' => $cats], 200);
+        return response()->json(['data' => $meals], 200);
     }
 
     public function snacksDietMeals(Request $request)
     {
-        $items = Diet::whereJsonContains('suitable_for', 'snacks')->get();
+        $user = $request->user();
+        if ($user) {
+            $userId = $user->id;
+            $items = Diet::whereJsonContains('suitable_for', 'snacks')
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        } else {
+            $items = Diet::whereJsonContains('suitable_for', 'snacks')->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        }
 
         return response()->json(['data' => $items], 200);
     }
 
     public function breakfastDietMeals(Request $request)
     {
-        $items = Diet::whereJsonContains('suitable_for', 'breakfast')->get();
+        $user = $request->user();
+        if ($user) {
+            $userId = $user->id;
+            $items = Diet::whereJsonContains('suitable_for', 'breakfast')
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        } else {
+            $items = Diet::whereJsonContains('suitable_for', 'breakfast')->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        }
 
         return response()->json(['data' => $items], 200);
     }
 
     public function launchDietMeals(Request $request)
     {
-        $items = Diet::whereJsonContains('suitable_for', 'launch')->get();
+        $user = $request->user();
+        if ($user) {
+            $userId = $user->id;
+            $items = Diet::whereJsonContains('suitable_for', 'launch')
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        } else {
+            $items = Diet::whereJsonContains('suitable_for', 'launch')->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        }
 
         return response()->json(['data' => $items], 200);
     }
 
     public function dinnerDietMeals(Request $request)
     {
-        $items = Diet::whereJsonContains('suitable_for', 'dinner')->get();
+        $user = $request->user();
+        if ($user) {
+            $userId = $user->id;
+            $items = Diet::whereJsonContains('suitable_for', 'dinner')
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        } else {
+            $items = Diet::whereJsonContains('suitable_for', 'dinner')->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        }
 
         return response()->json(['data' => $items], 200);
     }
@@ -58,32 +156,126 @@ class DietsController extends Controller
             ->take(5)
             ->get();
 
-        $snackDiet = Diet::whereJsonContains('suitable_for', 'snacks')
-            ->latest()
-            ->take(5)
-            ->get();
+        $user = $request->user();
+        if ($user) {
+            $userId = $user->id;
+            $snackDiet = Diet::whereJsonContains('suitable_for', 'snacks')
+                ->latest()
+                ->take(5)
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
 
-        $breakfastDiet = Diet::whereJsonContains('suitable_for', 'breakfast')
-            ->latest()
-            ->take(5)
-            ->get();
+            $breakfastDiet = Diet::whereJsonContains('suitable_for', 'breakfast')
+                ->latest()
+                ->take(5)
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
 
-        $launchDiet = Diet::whereJsonContains('suitable_for', 'launch')
-            ->latest()
-            ->take(5)
-            ->get();
+            $launchDiet = Diet::whereJsonContains('suitable_for', 'launch')
+                ->latest()
+                ->take(5)
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
 
-        $dinnerDiet = Diet::whereJsonContains('suitable_for', 'dinner')
-            ->latest()
-            ->take(5)
-            ->get();
+            $dinnerDiet = Diet::whereJsonContains('suitable_for', 'dinner')
+                ->latest()
+                ->take(5)
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        } else {
+            $snackDiet = Diet::whereJsonContains('suitable_for', 'snacks')
+                ->latest()
+                ->take(5)
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+
+            $breakfastDiet = Diet::whereJsonContains('suitable_for', 'breakfast')
+                ->latest()
+                ->take(5)
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+
+            $launchDiet = Diet::whereJsonContains('suitable_for', 'launch')
+                ->latest()
+                ->take(5)
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+
+            $dinnerDiet = Diet::whereJsonContains('suitable_for', 'dinner')
+                ->latest()
+                ->take(5)
+                ->get()
+                ->map(function ($meal) {
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        }
+
 
         return response()->json(['data' => ['categories' => $dietCats, 'snackMeals' => $snackDiet, 'breakfastMeals' => $breakfastDiet, 'launchMeals' => $launchDiet, 'dinnerMeals' => $dinnerDiet]], 200);
     }
 
-    public function dietCategoryMeals($id)
+    public function dietCategoryMeals($request, $id)
     {
-        $items = Diet::where('category_diet_id', $id)->get();
+        $userId = $request->user()->id;
+
+        if (!empty($userId)) {
+            $items = Diet::where('category_diet_id', $id)
+                ->leftJoin('diet_favourites', function ($join) use ($userId) {
+                    $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                        ->where('diet_favourites.client_id', '=', $userId);
+                })
+                ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+                ->get()
+                ->map(function ($meal) {
+                    // Add an `is_fav` attribute based on whether the meal is in the favorites table
+                    $meal->is_fav = !is_null($meal->is_fav);
+                    return $meal;
+                });
+        } else {
+            $items = Diet::where('category_diet_id', $id)->get();
+        }
 
         return response()->json(['data' => $items], 200);
     }

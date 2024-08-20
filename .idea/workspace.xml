@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# user favs." />
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# .env misc updates.">
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/OptionalAuth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -277,22 +286,8 @@
       <workItem from="1723634992466" duration="2777000" />
       <workItem from="1723688424437" duration="3538000" />
       <workItem from="1723698780674" duration="2665000" />
-    </task>
-    <task id="LOCAL-00006" summary="# app name change">
-      <option name="closed" value="true" />
-      <created>1720237698780</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1720237698780</updated>
-    </task>
-    <task id="LOCAL-00007" summary="# Due payments localization&#10;# fixing issues">
-      <option name="closed" value="true" />
-      <created>1720274991950</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1720274991950</updated>
+      <workItem from="1724001476693" duration="239000" />
+      <workItem from="1724146219613" duration="3071000" />
     </task>
     <task id="LOCAL-00008" summary="# fixing issues&#10;# technician and orders apis">
       <option name="closed" value="true" />
@@ -670,7 +665,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723701442784</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="# api misc updates.">
+      <option name="closed" value="true" />
+      <created>1724001526254</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1724001526255</updated>
+    </task>
+    <task id="LOCAL-00056" summary="# .env misc updates.">
+      <option name="closed" value="true" />
+      <created>1724001673484</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1724001673484</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,8 +701,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# remove secrets" />
-    <MESSAGE value="# firebase admin file" />
     <MESSAGE value="# remove firebase admin secrets" />
     <MESSAGE value="# secure google credentials" />
     <MESSAGE value="# visit date edit" />
@@ -715,6 +724,8 @@
     <MESSAGE value="# misc updates" />
     <MESSAGE value="# water track logs apis." />
     <MESSAGE value="# user favs." />
-    <option name="LAST_COMMIT_MESSAGE" value="# user favs." />
+    <MESSAGE value="# api misc updates." />
+    <MESSAGE value="# .env misc updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="# .env misc updates." />
   </component>
 </project>
