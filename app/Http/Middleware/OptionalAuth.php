@@ -12,11 +12,19 @@ class OptionalAuth
     public function handle(Request $request, Closure $next)
     {
         if ($request->bearerToken()) {
-            Auth::setUser(
-                Auth::guard('sanctum')->user()
-            );
-        }
+            try {
+                if (Auth::guard('sanctum')->user()) {
+                    Auth::setUser(
+                        Auth::guard('sanctum')->user()
+                    );
+                } else {
+                    return response()->json(null, 401);
+                }
 
+            } catch (\Exception $exception) {
+                return response()->json(null, 401);
+            }
+        }
         return $next($request);
     }
 }
