@@ -31,9 +31,9 @@ class WorkoutsController extends Controller
                 })
                 ->select('exercises.*', \DB::raw('workout_favourites.id as is_fav'))
                 ->get()
-                ->map(function ($meal) {
-                    $meal->is_fav = !is_null($meal->is_fav);
-                    return $meal;
+                ->map(function ($exercise) {
+                    $exercise->is_fav = !is_null($exercise->is_fav);
+                    return $exercise;
                 });
 
         } else {
@@ -74,9 +74,9 @@ class WorkoutsController extends Controller
             })
                 ->select('exercises.*', \DB::raw('workout_favourites.id as is_fav'))
                 ->get()
-                ->map(function ($meal) {
-                    $meal->is_fav = !is_null($meal->is_fav);
-                    return $meal;
+                ->map(function ($exercise) {
+                    $exercise->is_fav = !is_null($exercise->is_fav);
+                    return $exercise;
                 });
 
         } else {
@@ -102,9 +102,9 @@ class WorkoutsController extends Controller
                 })
                 ->select('exercises.*', \DB::raw('workout_favourites.id as is_fav'))
                 ->get()
-                ->map(function ($meal) {
-                    $meal->is_fav = !is_null($meal->is_fav);
-                    return $meal;
+                ->map(function ($exercise) {
+                    $exercise->is_fav = !is_null($exercise->is_fav);
+                    return $exercise;
                 });
 
         } else {
@@ -130,9 +130,9 @@ class WorkoutsController extends Controller
                 })
                 ->select('exercises.*', \DB::raw('workout_favourites.id as is_fav'))
                 ->get()
-                ->map(function ($meal) {
-                    $meal->is_fav = !is_null($meal->is_fav);
-                    return $meal;
+                ->map(function ($exercise) {
+                    $exercise->is_fav = !is_null($exercise->is_fav);
+                    return $exercise;
                 });
 
         } else {
