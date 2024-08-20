@@ -42,12 +42,15 @@ Route::middleware('api.optional.auth')->group(function () {
 });
 
 //Workouts
-Route::get('/workouts/summary', [\App\Http\Controllers\WorkoutsController::class, 'summary']);
+
 Route::get('/workouts/bodyParts/all', [\App\Http\Controllers\WorkoutsController::class, 'bodyParts']);
 Route::get('/workouts/equipments/all', [\App\Http\Controllers\WorkoutsController::class, 'equipments']);
-Route::get('/workouts/exercises/all', [\App\Http\Controllers\WorkoutsController::class, 'exercises']);
-Route::get('/workouts/bodyPartExercises/{id}', [\App\Http\Controllers\WorkoutsController::class, 'bodyPartExercises']);
-Route::get('/workouts/equipmentExercises/{id}', [\App\Http\Controllers\WorkoutsController::class, 'equipmentExercises']);
+Route::middleware('api.optional.auth')->group(function () {
+    Route::get('/workouts/summary', [\App\Http\Controllers\WorkoutsController::class, 'summary']);
+    Route::get('/workouts/exercises/all', [\App\Http\Controllers\WorkoutsController::class, 'exercises']);
+    Route::get('/workouts/bodyPartExercises/{id}', [\App\Http\Controllers\WorkoutsController::class, 'bodyPartExercises']);
+    Route::get('/workouts/equipmentExercises/{id}', [\App\Http\Controllers\WorkoutsController::class, 'equipmentExercises']);
+});
 
 
 //Water Logger

@@ -50,7 +50,16 @@ class DietFavouriteController extends Controller
 
         $favourites = Diet::whereHas('favourites', function ($query) use ($userId) {
             $query->where('client_id', $userId);
-        })->get();
+        })->leftJoin('diet_favourites', function ($join) use ($userId) {
+            $join->on('diets.id', '=', 'diet_favourites.meal_id')
+                ->where('diet_favourites.client_id', '=', $userId);
+        })
+            ->select('diets.*', \DB::raw('diet_favourites.id as is_fav'))
+            ->get()
+            ->map(function ($meal) {
+                $meal->is_fav = !is_null($meal->is_fav);
+                return $meal;
+            });
 
         return response()->json(['data' => $favourites], 200);
     }

@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# .env misc updates.">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/OptionalAuth.php" afterDir="false" />
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# add diet favs toggle key">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DietFavouriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DietFavouriteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkoutFavouriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkoutFavouriteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkoutsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,15 +284,7 @@
       <workItem from="1723688424437" duration="3538000" />
       <workItem from="1723698780674" duration="2665000" />
       <workItem from="1724001476693" duration="239000" />
-      <workItem from="1724146219613" duration="3071000" />
-    </task>
-    <task id="LOCAL-00008" summary="# fixing issues&#10;# technician and orders apis">
-      <option name="closed" value="true" />
-      <created>1720277492042</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1720277492042</updated>
+      <workItem from="1724146219613" duration="4036000" />
     </task>
     <task id="LOCAL-00009" summary="# auth interceptors">
       <option name="closed" value="true" />
@@ -681,7 +670,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724001673484</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="# add diet favs toggle key">
+      <option name="closed" value="true" />
+      <created>1724149381766</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1724149381766</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +698,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# remove firebase admin secrets" />
     <MESSAGE value="# secure google credentials" />
     <MESSAGE value="# visit date edit" />
     <MESSAGE value="# daily report export issue.&#10;# technician add isuue&#10;# user add issue" />
@@ -726,6 +722,7 @@
     <MESSAGE value="# user favs." />
     <MESSAGE value="# api misc updates." />
     <MESSAGE value="# .env misc updates." />
-    <option name="LAST_COMMIT_MESSAGE" value="# .env misc updates." />
+    <MESSAGE value="# add diet favs toggle key" />
+    <option name="LAST_COMMIT_MESSAGE" value="# add diet favs toggle key" />
   </component>
 </project>

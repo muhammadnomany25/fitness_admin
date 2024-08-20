@@ -51,7 +51,17 @@ class WorkoutFavouriteController extends Controller
 
         $favourites = Exercise::whereHas('favourites', function ($query) use ($userId) {
             $query->where('client_id', $userId);
-        })->get();
+        })
+            ->leftJoin('workout_favourites', function ($join) use ($userId) {
+            $join->on('exercises.id', '=', 'workout_favourites.exercise_id')
+                ->where('workout_favourites.client_id', '=', $userId);
+        })
+            ->select('exercises.*', \DB::raw('workout_favourites.id as is_fav'))
+            ->get()
+            ->map(function ($exercise) {
+                $exercise->is_fav = !is_null($exercise->is_fav);
+                return $exercise;
+            });
 
         return response()->json(['data' => $favourites], 200);
     }
