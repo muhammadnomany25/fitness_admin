@@ -31,6 +31,7 @@ Route::post('/login', [ClientController::class, 'login']);
 
 Route::middleware('auth:sanctum')->put('/completeProfile', [ClientController::class, 'completeProfile']);
 Route::middleware('auth:sanctum')->delete('/deleteAccount', [ClientController::class, 'deleteProfile']);
+Route::middleware('auth:sanctum')->put('/editProfile', [ClientController::class, 'editProfile']);
 
 // Diet
 Route::get('/diet/cats/all', [DietsController::class, 'dietCats']);

@@ -125,4 +125,57 @@ class ClientController extends Controller
 
         return response()->json(['message' => 'Account deleted successfully'], Response::HTTP_OK);
     }
+
+    public function editProfile(Request $request)
+    {
+        // Manually validate the request data
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email:rfc,dns',
+            'phoneNumber' => ['required', 'regex:/^(\+201|01|00201)[0-2,5]{1}[0-9]{8}$/'],
+            'gender' => 'required|string',
+            'height' => 'required|numeric',
+            'weight' => 'required|numeric',
+            'age' => 'required|numeric'
+        ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            // Return a JSON response with validation errors
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $client = $request->user();
+
+        if (!$client) {
+            return response()->json(['error' => 'Client Not exist'], 404);
+        }
+
+
+        $existClient = Client::where('email', $request->email)->where('id' , '!=', $request->user()->id)->first();
+
+        if ($existClient) {
+            return response()->json(['message' => 'Email used by another account'], Response::HTTP_CONFLICT);
+        }
+
+        $existClient = Client::where('phoneNumber', $request->phoneNumber)->where('id' , '!=', $request->user()->id)->first();
+        if ($existClient) {
+            return response()->json(['message' => 'Phone number used by another account'], Response::HTTP_CONFLICT);
+        }
+
+        $bmi = $request->weight / (($request->height / 100) * ($request->height / 100));
+
+        $client->name = $request->name;
+        $client->email = $request->email;
+        $client->phoneNumber = $request->phoneNumber;
+        $client->height = $request->height;
+        $client->weight = $request->weight;
+        $client->age = $request->age;
+        $client->gender = $request->gender;
+        $client->bmi = round($bmi, 2);
+        $client->bmi_description = "test bmi message, will calculate later";
+        $client->save();
+
+        return response()->json(['message' => 'Client update successfully', "data" => $client], Response::HTTP_OK);
+    }
 }
