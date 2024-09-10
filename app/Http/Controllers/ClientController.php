@@ -111,4 +111,18 @@ class ClientController extends Controller
 
         return response()->json(['message' => 'Client update successfully', "data" => $client], Response::HTTP_OK);
     }
+
+    public function deleteProfile(Request $request)
+    {
+        $client = $request->user();
+
+        if (!$client) {
+            return response()->json(['error' => 'Client Not exist'], 404);
+        }
+
+        $item = Client::find($request->user()->id);
+        $item->delete();
+
+        return response()->json(['message' => 'Account deleted successfully'], Response::HTTP_OK);
+    }
 }

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# misc updates.">
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# handle invalid auth token.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/OptionalAuth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/OptionalAuth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
@@ -284,15 +285,10 @@
       <workItem from="1723688424437" duration="3538000" />
       <workItem from="1723698780674" duration="2665000" />
       <workItem from="1724001476693" duration="239000" />
-      <workItem from="1724146219613" duration="5018000" />
-    </task>
-    <task id="LOCAL-00011" summary="# technician complete order api">
-      <option name="closed" value="true" />
-      <created>1720472972540</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1720472972540</updated>
+      <workItem from="1724146219613" duration="5139000" />
+      <workItem from="1724218355358" duration="634000" />
+      <workItem from="1724425812463" duration="1086000" />
+      <workItem from="1725960628471" duration="415000" />
     </task>
     <task id="LOCAL-00012" summary="# technician complete order api fix">
       <option name="closed" value="true" />
@@ -678,7 +674,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724150638405</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="# handle invalid auth token.">
+      <option name="closed" value="true" />
+      <created>1724151275904</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1724151275904</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,7 +702,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# daily report export issue.&#10;# technician add isuue&#10;# user add issue" />
     <MESSAGE value="# clients&#10;# remove un needed code&#10;# diet flow" />
     <MESSAGE value="# exercises flow" />
     <MESSAGE value="# .env update" />
@@ -723,6 +726,7 @@
     <MESSAGE value="# add diet favs toggle key" />
     <MESSAGE value="# add workout favs toggle key" />
     <MESSAGE value="# misc updates." />
-    <option name="LAST_COMMIT_MESSAGE" value="# misc updates." />
+    <MESSAGE value="# handle invalid auth token." />
+    <option name="LAST_COMMIT_MESSAGE" value="# handle invalid auth token." />
   </component>
 </project>
