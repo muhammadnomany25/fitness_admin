@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DietFavouriteController;
 use App\Http\Controllers\DietsController;
+use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\WaterLogController;
 use App\Http\Controllers\WorkoutFavouriteController;
 use App\Http\Controllers\WorkoutsController;
@@ -35,6 +36,7 @@ Route::middleware('auth:sanctum')->put('/editProfile', [ClientController::class,
 
 // Diet
 Route::get('/diet/cats/all', [DietsController::class, 'dietCats']);
+Route::get('/notifications/all', [NotificationsController::class, 'index']);
 
 Route::middleware('api.optional.auth')->group(function () {
     Route::get('/diet/dietMeals/all', [DietsController::class, 'dietMeals']);
