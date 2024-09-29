@@ -61,6 +61,7 @@ class CoachCallResource extends Resource
                     ->onColor('success')
                     ->offColor('danger'),
             ])
+            ->defaultSort('desc')
             ->filters([
                 //
             ])

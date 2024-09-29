@@ -54,6 +54,7 @@ class NotificationResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('desc')
             ->filters([
                 //
             ])
