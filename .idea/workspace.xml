@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# handle invalid auth token.">
+    <list default="true" id="ca03cccc-b5e5-40b9-8b00-aba09984dc1f" name="Changes" comment="# notifications api">
+      <change afterPath="$PROJECT_DIR$/app/Observers/NotificationObserver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/FCMService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c0/71/c071422490d526a8aada046adf3a9c9fa0593468" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ec/c4/ecc49f49f4da6b940dcde13f0571e79c299871e6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Notification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/12/e1/12e1ffc4e4a3e8330b657a92b03cea70924f74c1" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/12/e1/12e1ffc4e4a3e8330b657a92b03cea70924f74c1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/72/bb/72bbdefd53b8340082ede3a4e68e514767ff0b35" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/72/bb/72bbdefd53b8340082ede3a4e68e514767ff0b35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/76/e7/76e7c0fdd0cc0d46502f9d381b947cdf6aa69891" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/76/e7/76e7c0fdd0cc0d46502f9d381b947cdf6aa69891" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/9c/1c/9c1c01dc3ac1445a500251fc34a15d3e75a849df" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/9c/1c/9c1c01dc3ac1445a500251fc34a15d3e75a849df" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -288,31 +293,9 @@
       <workItem from="1724146219613" duration="5139000" />
       <workItem from="1724218355358" duration="634000" />
       <workItem from="1724425812463" duration="1086000" />
-      <workItem from="1725960628471" duration="415000" />
-    </task>
-    <task id="LOCAL-00012" summary="# technician complete order api fix">
-      <option name="closed" value="true" />
-      <created>1720473266086</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1720473266086</updated>
-    </task>
-    <task id="LOCAL-00013" summary="# order invoices, disable deletion">
-      <option name="closed" value="true" />
-      <created>1720473369730</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1720473369730</updated>
-    </task>
-    <task id="LOCAL-00014" summary="# tech orders api edit&#10;# misc updates">
-      <option name="closed" value="true" />
-      <created>1720474234295</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1720474234295</updated>
+      <workItem from="1725960628471" duration="1882000" />
+      <workItem from="1727282235567" duration="1474000" />
+      <workItem from="1727614164870" duration="1882000" />
     </task>
     <task id="LOCAL-00015" summary="# unassign tech from order on complete it.">
       <option name="closed" value="true" />
@@ -682,7 +665,31 @@
       <option name="project" value="LOCAL" />
       <updated>1724151275904</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="# delete account api.">
+      <option name="closed" value="true" />
+      <created>1725961061490</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1725961061491</updated>
+    </task>
+    <task id="LOCAL-00062" summary="# edit account api.">
+      <option name="closed" value="true" />
+      <created>1725961905678</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1725961905678</updated>
+    </task>
+    <task id="LOCAL-00063" summary="# notifications api">
+      <option name="closed" value="true" />
+      <created>1727286469201</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1727286469201</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -702,9 +709,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="# clients&#10;# remove un needed code&#10;# diet flow" />
-    <MESSAGE value="# exercises flow" />
-    <MESSAGE value="# .env update" />
     <MESSAGE value="# misc updates (storage link)" />
     <MESSAGE value="# misc updates (filesystems)" />
     <MESSAGE value="# misc updates (default user image)" />
@@ -727,6 +731,9 @@
     <MESSAGE value="# add workout favs toggle key" />
     <MESSAGE value="# misc updates." />
     <MESSAGE value="# handle invalid auth token." />
-    <option name="LAST_COMMIT_MESSAGE" value="# handle invalid auth token." />
+    <MESSAGE value="# delete account api." />
+    <MESSAGE value="# edit account api." />
+    <MESSAGE value="# notifications api" />
+    <option name="LAST_COMMIT_MESSAGE" value="# notifications api" />
   </component>
 </project>
