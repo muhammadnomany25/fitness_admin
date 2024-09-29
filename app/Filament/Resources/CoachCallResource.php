@@ -65,7 +65,7 @@ class CoachCallResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+
             ]);
     }
 
