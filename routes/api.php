@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CoachCallsController;
 use App\Http\Controllers\DietFavouriteController;
 use App\Http\Controllers\DietsController;
 use App\Http\Controllers\NotificationsController;
@@ -80,5 +81,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/favourites/exercise/add', [WorkoutFavouriteController::class, 'addToFavourite']);
     Route::delete('/favourites/exercise/remove', [WorkoutFavouriteController::class, 'removeFromFavourite']);
     Route::get('/favourites/exercise/all', [WorkoutFavouriteController::class, 'getFavourites']);
+});
+
+// Coach Calls
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/coachcalls/schedule/new', [CoachCallsController::class, 'add']);
 });
 
