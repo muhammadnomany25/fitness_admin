@@ -178,7 +178,7 @@ class ClientController extends Controller
 //        $client->fcmToekn = $request->fcmToken;
 //        $client->save();
 
-        return response()->json(['message' => 'Client update successfully', "data" => $client], Response::HTTP_OK);
+        return response()->json(['message' => 'Fcm token updated successfully'], Response::HTTP_OK);
     }
 
     public function deleteProfile(Request $request)
