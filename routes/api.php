@@ -28,12 +28,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Client Auth
 Route::post('/signup', [ClientController::class, 'signup']);
+Route::post('/signInSocial', [ClientController::class, 'signInSocial']);
 
 Route::post('/login', [ClientController::class, 'login']);
 
 Route::middleware('auth:sanctum')->put('/completeProfile', [ClientController::class, 'completeProfile']);
 Route::middleware('auth:sanctum')->delete('/deleteAccount', [ClientController::class, 'deleteProfile']);
 Route::middleware('auth:sanctum')->put('/editProfile', [ClientController::class, 'editProfile']);
+Route::middleware('auth:sanctum')->put('/updateFcmToken', [ClientController::class, 'updateFCMToken']);
 
 // Diet
 Route::get('/diet/cats/all', [DietsController::class, 'dietCats']);

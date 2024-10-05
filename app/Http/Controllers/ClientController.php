@@ -77,6 +77,49 @@ class ClientController extends Controller
         return response()->json(['message' => 'Client created successfully', 'token' => $token, "data" => $client], Response::HTTP_OK);
     }
 
+    public function signInSocial(Request $request)
+    {
+        // Manually validate the request data
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email:rfc,dns',
+            'phoneNumber' => ['required', 'regex:/^(\+201|01|00201)[0-2,5]{1}[0-9]{8}$/'],
+            'socialToken' => 'required|string',
+            'socialType' => 'required|string'
+        ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            // Return a JSON response with validation errors
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $client = Client::where('email', $request->email)->first();
+
+        if ($client) {
+            if (!$client->height) {
+                $token = $client->createToken('auth_token')->plainTextToken;
+                return response()->json(['message' => 'Client already exists, complete profile', 'token' => $token, "data" => $client], Response::HTTP_OK);
+            } else {
+                return response()->json(['message' => 'Client already exists'], 409);
+            }
+        }
+
+        $client = new Client();
+        $client->name = $request->name;
+        $client->email = $request->email;
+        $client->phoneNumber = $request->phoneNumber;
+        //TODO: phone number to be optional, password and to add socialToken and socialType to the clients table
+//        $client->socialToken = $request->socialToken;
+//        $client->socialType = $request->socialType;
+        $client->password = Hash::make("password");
+        $client->save();
+
+        $client = Client::where('email', $request->email)->first();
+        $token = $client->createToken('auth_token')->plainTextToken;
+        return response()->json(['message' => 'Client created successfully', 'token' => $token, "data" => $client], Response::HTTP_OK);
+    }
+
     public function completeProfile(Request $request)
     {
         // Manually validate the request data
@@ -108,6 +151,32 @@ class ClientController extends Controller
         $client->bmi = round($bmi, 2);
         $client->bmi_description = "test bmi message, will calculate later";
         $client->save();
+
+        return response()->json(['message' => 'Client update successfully', "data" => $client], Response::HTTP_OK);
+    }
+
+    public function updateFCMToken(Request $request)
+    {
+        // Manually validate the request data
+        $validator = Validator::make($request->all(), [
+            'fcmToken' => 'required|string',
+        ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            // Return a JSON response with validation errors
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $client = $request->user();
+
+        if (!$client) {
+            return response()->json(['error' => 'Client Not exist'], 404);
+        }
+
+        //TODO: add fcm token to clients table
+//        $client->fcmToekn = $request->fcmToken;
+//        $client->save();
 
         return response()->json(['message' => 'Client update successfully', "data" => $client], Response::HTTP_OK);
     }
