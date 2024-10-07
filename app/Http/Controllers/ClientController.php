@@ -97,11 +97,11 @@ class ClientController extends Controller
         $client = Client::where('email', $request->email)->first();
 
         if ($client) {
+            $token = $client->createToken('auth_token')->plainTextToken;
             if (!$client->height) {
-                $token = $client->createToken('auth_token')->plainTextToken;
                 return response()->json(['message' => 'Client already exists, complete profile', 'token' => $token, "data" => $client], Response::HTTP_OK);
             } else {
-                return response()->json(['message' => 'Client already exists'], 409);
+                return response()->json(['token' => $token, "data" => $client], Response::HTTP_OK);
             }
         }
 
