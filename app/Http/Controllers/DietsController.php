@@ -256,7 +256,7 @@ class DietsController extends Controller
         return response()->json(['data' => ['categories' => $dietCats, 'snackMeals' => $snackDiet, 'breakfastMeals' => $breakfastDiet, 'launchMeals' => $launchDiet, 'dinnerMeals' => $dinnerDiet]], 200);
     }
 
-    public function dietCategoryMeals($request, $id)
+    public function dietCategoryMeals(Request $request, $id)
     {
         $userId = $request->user()->id;
 
