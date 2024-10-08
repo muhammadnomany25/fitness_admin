@@ -258,9 +258,8 @@ class DietsController extends Controller
 
     public function dietCategoryMeals(Request $request, $id)
     {
-        $userId = $request->user()->id;
-
-        if (!empty($userId)) {
+        if (!empty($request->user())) {
+            $userId = $request->user()->id;
             $items = Diet::where('category_diet_id', $id)
                 ->leftJoin('diet_favourites', function ($join) use ($userId) {
                     $join->on('diets.id', '=', 'diet_favourites.meal_id')
