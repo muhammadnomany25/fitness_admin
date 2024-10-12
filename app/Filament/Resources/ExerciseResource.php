@@ -65,9 +65,15 @@ class ExerciseResource extends Resource
                 Forms\Components\MarkdownEditor::make('descriptionEn')
                     ->default(null)
                     ->required(),
-                Forms\Components\TextInput::make('videoUrl')
-                    ->default(null)
-                    ->required(),
+//                Forms\Components\TextInput::make('videoUrl')
+//                    ->default(null)
+//                    ->required(),
+                FileUpload::make('videoUrl')
+                    ->label('Video')
+                    ->acceptedFileTypes(['video/mp4', 'video/mpeg', 'video/avi'])
+                    ->required()
+                    ->columnSpan(2)
+                    ->previewable(false),
                 Forms\Components\TextInput::make('duration')
                     ->default(null)
                     ->numeric()
