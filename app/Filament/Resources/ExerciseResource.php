@@ -37,7 +37,7 @@ class ExerciseResource extends Resource
                     ->columnSpan(2),
                 FileUpload::make('image')
                     ->image()
-                    ->openable()
+//                    ->openable()
                     ->required()
                     ->columnSpan(2),
                 Forms\Components\TextInput::make('titleAr')
